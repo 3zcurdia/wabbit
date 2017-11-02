@@ -10,5 +10,5 @@ import Foundation
 
 struct Report {
     let name: String
-    let time: Float
+    let time: Double
 }

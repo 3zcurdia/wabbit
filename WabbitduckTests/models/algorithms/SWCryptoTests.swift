@@ -9,7 +9,7 @@
 import XCTest
 @testable import Wabbitduck
 
-class SWCryptoTest: XCTestCase {
+class SWCryptoTests: XCTestCase {
     let text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
     
     func testSha1() {

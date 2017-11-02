@@ -9,7 +9,7 @@
 import XCTest
 @testable import Wabbitduck
 
-class SWNumericTest: XCTestCase {
+class SWNumericTests: XCTestCase {
     
     func testFactorial(){
         XCTAssertEqual(6, SWNumeric.shared.factorial(int: 3))
@@ -26,6 +26,9 @@ class SWNumericTest: XCTestCase {
         XCTAssertTrue(SWNumeric.shared.isPrime(int: 181))
         XCTAssertTrue(SWNumeric.shared.isPrime(int: 2017))
         XCTAssertTrue(SWNumeric.shared.isPrime(int: 64019))
+    }
+    
+    func testPrimePerformance() {
         self.measure {
             XCTAssertTrue(SWNumeric.shared.isPrime(int: 104729))
         }

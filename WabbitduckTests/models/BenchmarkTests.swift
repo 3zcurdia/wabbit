@@ -9,7 +9,7 @@
 import XCTest
 @testable import Wabbitduck
 
-class WabbitduckTests: XCTestCase {
+class BenchmarkTests: XCTestCase {
     let report1 = Report(name: "Method A", time: 0.2)
     let report2 = Report(name: "Method B", time: 0.4)
     let report3 = Report(name: "Method C", time: 0.8)

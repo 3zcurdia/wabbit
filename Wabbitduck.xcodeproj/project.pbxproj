@@ -17,9 +17,11 @@
 		3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCB1FAAE39800E401C4 /* Benchmark.swift */; };
 		3038CDD01FAAEA8600E401C4 /* SWCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */; };
 		3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD31FAAED6700E401C4 /* OBCrypto.m */; };
-		3038CDDA1FAAF02000E401C4 /* SWCryptoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD91FAAF02000E401C4 /* SWCryptoTest.swift */; };
+		3038CDDA1FAAF02000E401C4 /* SWCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */; };
 		3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */; };
-		3038CDDE1FAAF62300E401C4 /* SWNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDD1FAAF62300E401C4 /* SWNumericTest.swift */; };
+		3038CDDE1FAAF62300E401C4 /* SWNumericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */; };
+		3038CDE01FAB012600E401C4 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDF1FAB012600E401C4 /* Exercise.swift */; };
+		3038CDE21FAB055000E401C4 /* ExcersiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDE11FAB055000E401C4 /* ExcersiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +60,11 @@
 		3038CDD11FAAED4600E401C4 /* OBCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCrypto.h; sourceTree = "<group>"; };
 		3038CDD21FAAED6600E401C4 /* Wabbitduck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wabbitduck-Bridging-Header.h"; sourceTree = "<group>"; };
 		3038CDD31FAAED6700E401C4 /* OBCrypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCrypto.m; sourceTree = "<group>"; };
-		3038CDD91FAAF02000E401C4 /* SWCryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCryptoTest.swift; sourceTree = "<group>"; };
+		3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCryptoTests.swift; sourceTree = "<group>"; };
 		3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumeric.swift; sourceTree = "<group>"; };
-		3038CDDD1FAAF62300E401C4 /* SWNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumericTest.swift; sourceTree = "<group>"; };
+		3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumericTests.swift; sourceTree = "<group>"; };
+		3038CDDF1FAB012600E401C4 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		3038CDE11FAB055000E401C4 /* ExcersiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcersiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +165,7 @@
 				3038CDCE1FAAEA4600E401C4 /* algorithms */,
 				3038CDC91FAAE38100E401C4 /* Report.swift */,
 				3038CDCB1FAAE39800E401C4 /* Benchmark.swift */,
+				3038CDDF1FAB012600E401C4 /* Exercise.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			children = (
 				3038CDD81FAAF00E00E401C4 /* algorithms */,
 				3038CDAD1FAAD7D300E401C4 /* BenchmarkTests.swift */,
+				3038CDE11FAB055000E401C4 /* ExcersiceTests.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -189,8 +195,8 @@
 		3038CDD81FAAF00E00E401C4 /* algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				3038CDD91FAAF02000E401C4 /* SWCryptoTest.swift */,
-				3038CDDD1FAAF62300E401C4 /* SWNumericTest.swift */,
+				3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */,
+				3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */,
 			);
 			path = algorithms;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
+				3038CDE01FAB012600E401C4 /* Exercise.swift in Sources */,
 				3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */,
 				3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
@@ -343,8 +350,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3038CDDA1FAAF02000E401C4 /* SWCryptoTest.swift in Sources */,
-				3038CDDE1FAAF62300E401C4 /* SWNumericTest.swift in Sources */,
+				3038CDDA1FAAF02000E401C4 /* SWCryptoTests.swift in Sources */,
+				3038CDE21FAB055000E401C4 /* ExcersiceTests.swift in Sources */,
+				3038CDDE1FAAF62300E401C4 /* SWNumericTests.swift in Sources */,
 				3038CDAE1FAAD7D300E401C4 /* BenchmarkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

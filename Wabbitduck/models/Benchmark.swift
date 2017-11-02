@@ -10,11 +10,11 @@ import Foundation
 
 struct Benchmark {
     var reports : [Report]?
-    func compare() -> [String:Float]? {
+    func compare() -> [String:Double]? {
         guard let unrappedReports = reports, unrappedReports.count > 1 else { return nil }
         let sortedReports = unrappedReports.sorted(by: { $0.time < $1.time })
         let baseline = sortedReports.first!.time
-        var comparsions = [String:Float]()
+        var comparsions = [String:Double]()
         for report in unrappedReports {
             comparsions[report.name] = (report.time / baseline)
         }
