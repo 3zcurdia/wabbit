@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD981FAAD7D300E401C4 /* AppDelegate.swift */; };
-		3038CD9B1FAAD7D300E401C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD9A1FAAD7D300E401C4 /* ViewController.swift */; };
-		3038CD9E1FAAD7D300E401C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3038CD9C1FAAD7D300E401C4 /* Main.storyboard */; };
+		3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */; };
 		3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */; };
 		3038CDA31FAAD7D300E401C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3038CDA11FAAD7D300E401C4 /* LaunchScreen.storyboard */; };
 		3038CDAE1FAAD7D300E401C4 /* WabbitduckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDAD1FAAD7D300E401C4 /* WabbitduckTests.swift */; };
@@ -36,8 +35,7 @@
 /* Begin PBXFileReference section */
 		3038CD951FAAD7D300E401C4 /* Wabbitduck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wabbitduck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3038CD981FAAD7D300E401C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3038CD9A1FAAD7D300E401C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3038CD9D1FAAD7D300E401C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3038CDA21FAAD7D300E401C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3038CDA41FAAD7D300E401C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,9 +95,10 @@
 		3038CD971FAAD7D300E401C4 /* Wabbitduck */ = {
 			isa = PBXGroup;
 			children = (
+				3038CDC81FAAE28C00E401C4 /* models */,
+				3038CDC71FAAE27B00E401C4 /* controllers */,
+				3038CDC61FAAE26F00E401C4 /* views */,
 				3038CD981FAAD7D300E401C4 /* AppDelegate.swift */,
-				3038CD9A1FAAD7D300E401C4 /* ViewController.swift */,
-				3038CD9C1FAAD7D300E401C4 /* Main.storyboard */,
 				3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */,
 				3038CDA11FAAD7D300E401C4 /* LaunchScreen.storyboard */,
 				3038CDA41FAAD7D300E401C4 /* Info.plist */,
@@ -123,6 +122,28 @@
 				3038CDBA1FAAD7D300E401C4 /* Info.plist */,
 			);
 			path = WabbitduckUITests;
+			sourceTree = "<group>";
+		};
+		3038CDC61FAAE26F00E401C4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3038CDC71FAAE27B00E401C4 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3038CDC81FAAE28C00E401C4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,7 +255,6 @@
 			files = (
 				3038CDA31FAAD7D300E401C4 /* LaunchScreen.storyboard in Resources */,
 				3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */,
-				3038CD9E1FAAD7D300E401C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3038CD9B1FAAD7D300E401C4 /* ViewController.swift in Sources */,
+				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3038CD9C1FAAD7D300E401C4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3038CD9D1FAAD7D300E401C4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3038CDA11FAAD7D300E401C4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -433,7 +445,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.ezcurdia.Wabbitduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -448,7 +460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.ezcurdia.Wabbitduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
