@@ -11,5 +11,11 @@
 #import <CommonCrypto/CommonDigest.h>
 #import <Foundation/Foundation.h>
 
+@interface OBCrypto : NSObject
++(id) shared;
+-(NSString *) sha1: (NSString *)string;
+-(NSString *) sha256: (NSString *)string;
+-(NSString *) base64: (NSString *)string;
+@end
 
 #endif /* OBCrypto_h */
