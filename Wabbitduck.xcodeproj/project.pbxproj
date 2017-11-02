@@ -11,8 +11,15 @@
 		3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */; };
 		3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */; };
 		3038CDA31FAAD7D300E401C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3038CDA11FAAD7D300E401C4 /* LaunchScreen.storyboard */; };
-		3038CDAE1FAAD7D300E401C4 /* WabbitduckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDAD1FAAD7D300E401C4 /* WabbitduckTests.swift */; };
+		3038CDAE1FAAD7D300E401C4 /* BenchmarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDAD1FAAD7D300E401C4 /* BenchmarkTests.swift */; };
 		3038CDB91FAAD7D300E401C4 /* WabbitduckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDB81FAAD7D300E401C4 /* WabbitduckUITests.swift */; };
+		3038CDCA1FAAE38100E401C4 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDC91FAAE38100E401C4 /* Report.swift */; };
+		3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCB1FAAE39800E401C4 /* Benchmark.swift */; };
+		3038CDD01FAAEA8600E401C4 /* SWCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */; };
+		3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD31FAAED6700E401C4 /* OBCrypto.m */; };
+		3038CDDA1FAAF02000E401C4 /* SWCryptoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD91FAAF02000E401C4 /* SWCryptoTest.swift */; };
+		3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */; };
+		3038CDDE1FAAF62300E401C4 /* SWNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDD1FAAF62300E401C4 /* SWNumericTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +47,20 @@
 		3038CDA21FAAD7D300E401C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3038CDA41FAAD7D300E401C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3038CDA91FAAD7D300E401C4 /* WabbitduckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WabbitduckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3038CDAD1FAAD7D300E401C4 /* WabbitduckTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WabbitduckTests.swift; sourceTree = "<group>"; };
+		3038CDAD1FAAD7D300E401C4 /* BenchmarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkTests.swift; sourceTree = "<group>"; };
 		3038CDAF1FAAD7D300E401C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3038CDB41FAAD7D300E401C4 /* WabbitduckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WabbitduckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3038CDB81FAAD7D300E401C4 /* WabbitduckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WabbitduckUITests.swift; sourceTree = "<group>"; };
 		3038CDBA1FAAD7D300E401C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3038CDC91FAAE38100E401C4 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		3038CDCB1FAAE39800E401C4 /* Benchmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Benchmark.swift; sourceTree = "<group>"; };
+		3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCrypto.swift; sourceTree = "<group>"; };
+		3038CDD11FAAED4600E401C4 /* OBCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCrypto.h; sourceTree = "<group>"; };
+		3038CDD21FAAED6600E401C4 /* Wabbitduck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wabbitduck-Bridging-Header.h"; sourceTree = "<group>"; };
+		3038CDD31FAAED6700E401C4 /* OBCrypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCrypto.m; sourceTree = "<group>"; };
+		3038CDD91FAAF02000E401C4 /* SWCryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCryptoTest.swift; sourceTree = "<group>"; };
+		3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumeric.swift; sourceTree = "<group>"; };
+		3038CDDD1FAAF62300E401C4 /* SWNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumericTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +125,7 @@
 		3038CDAC1FAAD7D300E401C4 /* WabbitduckTests */ = {
 			isa = PBXGroup;
 			children = (
-				3038CDAD1FAAD7D300E401C4 /* WabbitduckTests.swift */,
+				3038CDCD1FAAE3CC00E401C4 /* models */,
 				3038CDAF1FAAD7D300E401C4 /* Info.plist */,
 			);
 			path = WabbitduckTests;
@@ -142,8 +158,41 @@
 		3038CDC81FAAE28C00E401C4 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				3038CDCE1FAAEA4600E401C4 /* algorithms */,
+				3038CDC91FAAE38100E401C4 /* Report.swift */,
+				3038CDCB1FAAE39800E401C4 /* Benchmark.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		3038CDCD1FAAE3CC00E401C4 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3038CDD81FAAF00E00E401C4 /* algorithms */,
+				3038CDAD1FAAD7D300E401C4 /* BenchmarkTests.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		3038CDCE1FAAEA4600E401C4 /* algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */,
+				3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */,
+				3038CDD11FAAED4600E401C4 /* OBCrypto.h */,
+				3038CDD31FAAED6700E401C4 /* OBCrypto.m */,
+				3038CDD21FAAED6600E401C4 /* Wabbitduck-Bridging-Header.h */,
+			);
+			path = algorithms;
+			sourceTree = "<group>";
+		};
+		3038CDD81FAAF00E00E401C4 /* algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				3038CDD91FAAF02000E401C4 /* SWCryptoTest.swift */,
+				3038CDDD1FAAF62300E401C4 /* SWNumericTest.swift */,
+			);
+			path = algorithms;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +263,7 @@
 				TargetAttributes = {
 					3038CD941FAAD7D300E401C4 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					3038CDA81FAAD7D300E401C4 = {
@@ -280,7 +330,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
+				3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */,
+				3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
+				3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */,
+				3038CDD01FAAEA8600E401C4 /* SWCrypto.swift in Sources */,
+				3038CDCA1FAAE38100E401C4 /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +343,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3038CDAE1FAAD7D300E401C4 /* WabbitduckTests.swift in Sources */,
+				3038CDDA1FAAF02000E401C4 /* SWCryptoTest.swift in Sources */,
+				3038CDDE1FAAF62300E401C4 /* SWNumericTest.swift in Sources */,
+				3038CDAE1FAAD7D300E401C4 /* BenchmarkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,12 +495,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3XL2U7DQC;
 				INFOPLIST_FILE = Wabbitduck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.ezcurdia.Wabbitduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wabbitduck/models/algorithms/Wabbitduck-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -453,12 +513,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D3XL2U7DQC;
 				INFOPLIST_FILE = Wabbitduck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.ezcurdia.Wabbitduck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wabbitduck/models/algorithms/Wabbitduck-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
