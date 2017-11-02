@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whitewabbit" translatesAutoresizingMaskIntoConstraints="NO" id="eih-Ye-Bra">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wabbit" translatesAutoresizingMaskIntoConstraints="NO" id="eih-Ye-Bra">
                                 <rect key="frame" x="67" y="213" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="vIa-j3-wMo"/>
@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="orange"/>
+                        <color key="backgroundColor" name="tangerine"/>
                         <constraints>
                             <constraint firstItem="eih-Ye-Bra" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CRN-Ts-y3N"/>
                             <constraint firstItem="eih-Ye-Bra" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="atd-Vc-CTO"/>
@@ -41,8 +41,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="whitewabbit" width="341" height="341"/>
-        <namedColor name="orange">
+        <image name="wabbit" width="341" height="341"/>
+        <namedColor name="tangerine">
             <color red="0.88235294117647056" green="0.39215686274509803" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
