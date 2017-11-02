@@ -21,4 +21,9 @@ class SWCryptoTests: XCTestCase {
         let expected = "ff640e3eb2f4ce5a3c100a76f247236b0b2eb95776f5bc68151a11cbb3314a80"
         XCTAssertEqual(expected, SWCrypto.shared.sha256(string: text))
     }
+    
+    func testBase64() {
+        let expected = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNldGV0dXIgc2FkaXBzY2luZyBlbGl0ci4="
+        XCTAssertEqual(expected, SWCrypto.shared.base64(string: text))
+    }
 }
