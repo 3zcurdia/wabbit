@@ -13,9 +13,9 @@
 
 @interface OBCrypto : NSObject
 +(id) shared;
--(NSString *) sha1: (NSString *)string;
--(NSString *) sha256: (NSString *)string;
--(NSString *) base64: (NSString *)string;
+-(NSString *) sha1String: (NSString *)input;
+-(NSString *) sha256String: (NSString *)input;
+-(NSString *) base64String: (NSString *)input;
 @end
 
 #endif /* OBCrypto_h */

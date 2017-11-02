@@ -8,10 +8,7 @@
 
 #import "OBCrypto.h"
 
-@interface OBCrypto()
-
-@end
-@implementation OBCrypto : NSObject
+@implementation OBCrypto
 
 + (id)shared {
     static OBCrypto *sharedOBCrypto = nil;
@@ -28,8 +25,8 @@
     return self;
 }
 
--(NSString *) sha1: (NSString *)string {
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+-(NSString *) sha1String: (NSString *)input {
+    NSData *data = [input dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
     CC_SHA1(data.bytes, (CC_LONG)data.length, digest);
     NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
@@ -39,9 +36,9 @@
     return output;
 }
 
--(NSString *) sha256: (NSString *)string{
-    const char *s = [string cStringUsingEncoding:NSASCIIStringEncoding];
-    NSData *keyData = [NSData dataWithBytes:s length:strlen(s)];
+-(NSString *) sha256String: (NSString *)input{
+    const char *data = [input cStringUsingEncoding:NSASCIIStringEncoding];
+    NSData *keyData = [NSData dataWithBytes:data length:strlen(data)];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH] = {0};
     CC_SHA256(keyData.bytes, (CC_LONG)(keyData.length), digest);
     NSData *out = [NSData dataWithBytes:digest length:CC_SHA256_DIGEST_LENGTH];
@@ -52,8 +49,8 @@
     return hash;
 }
 
--(NSString *) base64: (NSString *)string{
-    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
+-(NSString *) base64String: (NSString *)input{
+    NSData *data = [input dataUsingEncoding:NSUTF8StringEncoding];
     return [data base64EncodedStringWithOptions:0];
 }
 

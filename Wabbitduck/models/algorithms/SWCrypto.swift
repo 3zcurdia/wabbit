@@ -42,10 +42,6 @@ class SWCrypto {
     }
     
     func base64(string:String) -> String {
-        return String(data: base64(data:Data(string.utf8)), encoding: .utf8) ?? ""
-    }
-    
-    func base64(data:Data) -> Data {
-        return data.base64EncodedData()
+        return String(data: Data(string.utf8).base64EncodedData(), encoding: .utf8) ?? ""
     }
 }

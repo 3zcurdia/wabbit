@@ -26,11 +26,12 @@ class SWNumericTests: XCTestCase {
         XCTAssertTrue(SWNumeric.shared.isPrime(int: 181))
         XCTAssertTrue(SWNumeric.shared.isPrime(int: 2017))
         XCTAssertTrue(SWNumeric.shared.isPrime(int: 64019))
+        XCTAssertTrue(SWNumeric.shared.isPrime(int: 104729))
     }
     
     func testPrimePerformance() {
         self.measure {
-            XCTAssertTrue(SWNumeric.shared.isPrime(int: 104729))
+            _ = SWNumeric.shared.isPrime(int: 104729)
         }
     }
 }
