@@ -12,7 +12,7 @@ class MainViewController: UIViewController {
     let exerciseSession = Exercise(times: 10_000, warmup: 5)
     
     let infoView = DeviceInfoView()
-    let langView = LanguagesView()
+    let reportView = ReportView()
     
     let button : UIButton = {
         let btn = UIButton(type: .system)
@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.platinum
+        view.backgroundColor = .tangerine
         setupLayout()
     }
 
@@ -43,20 +43,20 @@ class MainViewController: UIViewController {
             infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             infoView.heightAnchor.constraint(equalToConstant: 140)
             ])
-        langView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(langView)
-        NSLayoutConstraint.activate([
-            langView.topAnchor.constraint(equalTo: infoView.bottomAnchor, constant: 3),
-            langView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            langView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            langView.heightAnchor.constraint(equalToConstant: 44)
-            ])
         view.addSubview(button)
         NSLayoutConstraint.activate([
-            button.heightAnchor.constraint(equalToConstant: 55),
             button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            button.heightAnchor.constraint(equalToConstant: 64)
+            ])
+        reportView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(reportView)
+        NSLayoutConstraint.activate([
+            reportView.topAnchor.constraint(equalTo: infoView.bottomAnchor),
+            reportView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            reportView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            reportView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: 5)
             ])
     }
 
@@ -78,7 +78,8 @@ class MainViewController: UIViewController {
 
             let text = """
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean orci lacus, rutrum in purus eget, tristique feugiat erat. Curabitur vulputate orci sollicitudin eros varius pellentesque. Donec id facilisis velit. Nunc dapibus nibh lectus, non condimentum augue gravida ac. In gravida sapien quis eleifend sagittis. Nam sagittis bibendum dui, a accumsan orci placerat eu. Donec eu eros condimentum, rhoncus nibh in, interdum quam. Vivamus nisi turpis, pellentesque at risus quis, feugiat dapibus nunc. Donec volutpat lectus vitae massa sagittis, sit amet commodo massa aliquam. Donec euismod, nisi a aliquam imperdiet, sapien sapien efficitur libero, a lobortis nulla massa vel lectus. Fusce condimentum hendrerit sem vitae malesuada. Phasellus id elit augue. Aenean egestas vitae nulla vel cursus.
-"""
+            """
+            
             self.benchmarkReport(methodName: "SHA1", objc: {
                 _ = (OBCrypto.shared() as! OBCrypto).sha1String(text)
             }, swift: {

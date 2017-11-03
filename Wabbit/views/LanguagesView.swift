@@ -9,19 +9,25 @@
 import UIKit
 
 class LanguagesView: UIView {
-    let objcImageView : UIImageView = {
+    private let objcImageView : UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "objc")!.withRenderingMode(.alwaysTemplate)
-        iv.tintColor = UIColor.platinum
+        iv.tintColor = .platinum
+        iv.backgroundColor = .yankeesBlue
+        iv.layer.borderColor = UIColor.platinum.cgColor
+        iv.layer.borderWidth = 2.0
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
     
-    let swiftImageView : UIImageView = {
+    private let swiftImageView : UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "swift")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = UIColor.platinum
+        iv.backgroundColor = UIColor.yankeesBlue
+        iv.layer.borderColor = UIColor.platinum.cgColor
+        iv.layer.borderWidth = 2.0
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -37,7 +43,6 @@ class LanguagesView: UIView {
     }
     
     func setupLayout() {
-        self.backgroundColor = UIColor.yankeesBlue
         addSubview(objcImageView)
         NSLayoutConstraint.activate([
             objcImageView.topAnchor.constraint(equalTo: topAnchor),
@@ -48,9 +53,9 @@ class LanguagesView: UIView {
         addSubview(swiftImageView)
         NSLayoutConstraint.activate([
             swiftImageView.topAnchor.constraint(equalTo: topAnchor),
+            swiftImageView.leadingAnchor.constraint(equalTo: objcImageView.trailingAnchor, constant: -2.0),
             swiftImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             swiftImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            swiftImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
             ])
     }
 
