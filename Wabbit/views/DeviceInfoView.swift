@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DeviseInfoView: UIView {
+class DeviceInfoView: UIView {
     private let devise = UIDevice.current
     
     private let leftContainer : UIView = {
@@ -73,7 +73,7 @@ class DeviseInfoView: UIView {
     
     private func loadInfo() {
         let foregroundColor = UIColor(named: "platinum")!
-        let attributedText = NSMutableAttributedString(string: "\n\(devise.localizedModel) 6s", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26), NSAttributedStringKey.foregroundColor: foregroundColor])
+        let attributedText = NSMutableAttributedString(string: "\n\(devise.modelName)", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26), NSAttributedStringKey.foregroundColor: foregroundColor])
         attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor]))
         infoTextView.attributedText = attributedText
     }

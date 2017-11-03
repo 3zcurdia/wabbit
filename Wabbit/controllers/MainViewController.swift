@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    let infoView = DeviseInfoView()
+    let infoView = DeviceInfoView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,9 +17,9 @@ class MainViewController: UIViewController {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(infoView)
         NSLayoutConstraint.activate([
-            infoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            infoView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            infoView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            infoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5),
+            infoView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            infoView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
             infoView.heightAnchor.constraint(equalToConstant: 150)
             ])
     }

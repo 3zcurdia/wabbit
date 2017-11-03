@@ -23,9 +23,10 @@
 		3038CDE01FAB012600E401C4 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDF1FAB012600E401C4 /* Exercise.swift */; };
 		3038CDE21FAB055000E401C4 /* ExcersiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDE11FAB055000E401C4 /* ExcersiceTests.swift */; };
 		3038CDE41FAB875100E401C4 /* OBCryptoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDE31FAB875100E401C4 /* OBCryptoTest.swift */; };
+		3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */; };
 		30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* OBNumeric.m */; };
 		30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */; };
-		30B2C46D1FABEF2700A4B683 /* DeviseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviseInfoView.swift */; };
+		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,10 +71,11 @@
 		3038CDDF1FAB012600E401C4 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		3038CDE11FAB055000E401C4 /* ExcersiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcersiceTests.swift; sourceTree = "<group>"; };
 		3038CDE31FAB875100E401C4 /* OBCryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBCryptoTest.swift; sourceTree = "<group>"; };
+		3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		30B2C4671FAB8D8100A4B683 /* OBNumeric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBNumeric.h; sourceTree = "<group>"; };
 		30B2C4681FAB8D8100A4B683 /* OBNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBNumeric.m; sourceTree = "<group>"; };
 		30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBNumericTest.swift; sourceTree = "<group>"; };
-		30B2C46C1FABEF2700A4B683 /* DeviseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviseInfoView.swift; sourceTree = "<group>"; };
+		30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */,
 				3038CDA11FAAD7D300E401C4 /* LaunchScreen.storyboard */,
 				3038CDA41FAAD7D300E401C4 /* Info.plist */,
+				3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */,
 			);
 			path = Wabbit;
 			sourceTree = "<group>";
@@ -156,7 +159,7 @@
 		3038CDC61FAAE26F00E401C4 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				30B2C46C1FABEF2700A4B683 /* DeviseInfoView.swift */,
+				30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -351,10 +354,11 @@
 			files = (
 				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
 				3038CDE01FAB012600E401C4 /* Exercise.swift in Sources */,
-				30B2C46D1FABEF2700A4B683 /* DeviseInfoView.swift in Sources */,
+				30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */,
 				3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */,
 				3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
+				3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */,
 				3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */,
 				30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */,
 				3038CDD01FAAEA8600E401C4 /* SWCrypto.swift in Sources */,
