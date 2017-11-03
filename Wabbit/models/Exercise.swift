@@ -23,6 +23,7 @@ struct Exercise {
             endTime = Date()
             samples.append(endTime.timeIntervalSince(startTime))
         }
-        return Report(name: name, time: (samples.reduce(0,+) / Double(samples.count)))
+        let avg = (samples.reduce(0,+)) / Double(samples.count)
+        return Report(name: name, time: avg)
     }
 }

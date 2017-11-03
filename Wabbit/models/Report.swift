@@ -11,4 +11,7 @@ import Foundation
 struct Report {
     let name: String
     let time: Double
+    func ips() -> Int {
+        return Int(1.0/time)
+    }
 }

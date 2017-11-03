@@ -27,9 +27,9 @@ class BooleanSettingView: UIView {
         let sw = UISwitch()
         sw.setOn(true, animated: false)
         sw.backgroundColor = .clear
-        sw.tintColor = UIColor(named: "platinum")
-        sw.thumbTintColor = UIColor(named: "yankees blue")
-        sw.onTintColor = UIColor(named: "tangerine")
+        sw.tintColor = UIColor.platinum
+        sw.thumbTintColor = UIColor.yankeesBlue
+        sw.onTintColor = UIColor.tangerine
         sw.translatesAutoresizingMaskIntoConstraints = false
         return sw
     }()

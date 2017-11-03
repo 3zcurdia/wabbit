@@ -46,7 +46,7 @@ class DeviceInfoView: UIView {
     }
     
     private func setupLayout() {
-        self.backgroundColor = UIColor(named: "tangerine")
+        self.backgroundColor = UIColor.tangerine
         addSubview(container)
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor),
