@@ -9,23 +9,28 @@
 import UIKit
 
 class ReportView: UIView {
+    let reuseIdentifier = "reportCell"
     let langView : LanguagesView = {
         let lv = LanguagesView()
         lv.translatesAutoresizingMaskIntoConstraints = false
         return lv
     }()
     
-    let reportsView : UICollectionView = {
+    let reportsCollection : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .platinum
+        cv.backgroundColor = .yankeesBlue
+        cv.isPagingEnabled = true
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        reportsCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: self.reuseIdentifier)
+        reportsCollection.delegate = self
+        reportsCollection.dataSource = self
         setupLayout()
     }
     
@@ -41,12 +46,36 @@ class ReportView: UIView {
             langView.trailingAnchor.constraint(equalTo: trailingAnchor),
             langView.heightAnchor.constraint(equalToConstant: 44)
             ])
-        addSubview(reportsView)
+        addSubview(reportsCollection)
         NSLayoutConstraint.activate([
-            reportsView.topAnchor.constraint(equalTo: langView.bottomAnchor),
-            reportsView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            reportsView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            reportsView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            reportsCollection.topAnchor.constraint(equalTo: langView.bottomAnchor),
+            reportsCollection.leadingAnchor.constraint(equalTo: leadingAnchor),
+            reportsCollection.trailingAnchor.constraint(equalTo: trailingAnchor),
+            reportsCollection.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
+    }
+}
+
+extension ReportView : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        cell.backgroundColor = .platinum
+//        cell.layer.borderColor = UIColor.yankeesBlue.cgColor
+//        cell.layer.borderWidth = 2.0
+        return cell
+    }
+}
+
+extension ReportView : UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 120)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
 }

@@ -24,6 +24,13 @@ class MainViewController: UIViewController {
         return btn
     }()
     
+    let activityIndicator : UIActivityIndicatorView = {
+        let ai = UIActivityIndicatorView()
+        ai.color = .yankeesBlue
+        ai.translatesAutoresizingMaskIntoConstraints = false
+        return ai
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .tangerine
@@ -58,11 +65,18 @@ class MainViewController: UIViewController {
             reportView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             reportView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: 5)
             ])
+        view.addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+            activityIndicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            activityIndicator.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            activityIndicator.heightAnchor.constraint(equalToConstant: 44),
+            activityIndicator.widthAnchor.constraint(equalToConstant: 44)
+            ])
     }
 
     @objc func onTapRun() {
         print("Running benchmarks...")
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        activityIndicator.startAnimating()
         DispatchQueue.global(qos: .background).async {
             self.benchmarkReport(methodName: "Prime", objc: {
                 _ = (OBNumeric.shared() as! OBNumeric).isPrimeLong(181)
@@ -99,7 +113,7 @@ class MainViewController: UIViewController {
             })
             
             DispatchQueue.main.async {
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                self.activityIndicator.stopAnimating()
             }
         }
     }
