@@ -21,14 +21,13 @@ class ReportView: UIView {
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .yankeesBlue
-        cv.isPagingEnabled = true
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        reportsCollection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: self.reuseIdentifier)
+        reportsCollection.register(ReportViewCell.self, forCellWithReuseIdentifier: self.reuseIdentifier)
         reportsCollection.delegate = self
         reportsCollection.dataSource = self
         setupLayout()
@@ -62,18 +61,17 @@ extension ReportView : UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .platinum
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ReportViewCell
         return cell
     }
 }
 
 extension ReportView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 120)
+        return CGSize(width: reportsCollection.frame.width, height: 125)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0
     }
 }
