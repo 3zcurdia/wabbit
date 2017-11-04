@@ -14,8 +14,6 @@ class LanguagesView: UIView {
         iv.image = UIImage(named: "objc")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .platinum
         iv.backgroundColor = .yankeesBlue
-        iv.layer.borderColor = UIColor.platinum.cgColor
-        iv.layer.borderWidth = 2.0
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -26,8 +24,6 @@ class LanguagesView: UIView {
         iv.image = UIImage(named: "swift")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = UIColor.platinum
         iv.backgroundColor = UIColor.yankeesBlue
-        iv.layer.borderColor = UIColor.platinum.cgColor
-        iv.layer.borderWidth = 2.0
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv

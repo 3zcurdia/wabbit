@@ -18,7 +18,8 @@ class MainViewController: UIViewController {
         let btn = UIButton(type: .system)
         btn.setTitle("Run!", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: .bold)
-        btn.tintColor = .yankeesBlue
+        btn.backgroundColor = .yankeesBlue
+        btn.tintColor = .platinum
         btn.addTarget(self, action: #selector(onTapRun), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
@@ -31,9 +32,13 @@ class MainViewController: UIViewController {
         return ai
     }()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .tangerine
+        view.backgroundColor = .black
         setupLayout()
     }
 
@@ -52,9 +57,9 @@ class MainViewController: UIViewController {
             ])
         view.addSubview(button)
         NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            button.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             button.heightAnchor.constraint(equalToConstant: 64)
             ])
         reportView.translatesAutoresizingMaskIntoConstraints = false

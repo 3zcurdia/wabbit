@@ -29,6 +29,7 @@ class DeviceInfoView: UIView {
     private let infoTextView : UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
+        tv.isSelectable = false
         tv.isEditable = false
         tv.isScrollEnabled = false
         tv.translatesAutoresizingMaskIntoConstraints = false

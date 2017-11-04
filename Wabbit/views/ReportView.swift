@@ -64,8 +64,6 @@ extension ReportView : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         cell.backgroundColor = .platinum
-//        cell.layer.borderColor = UIColor.yankeesBlue.cgColor
-//        cell.layer.borderWidth = 2.0
         return cell
     }
 }
