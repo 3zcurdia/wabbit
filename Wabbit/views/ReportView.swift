@@ -59,12 +59,9 @@ class ReportView: UIView {
             ])
     }
     
-    let textTest = """
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean orci lacus, rutrum in purus eget, tristique feugiat erat. Curabitur vulputate orci sollicitudin eros varius pellentesque. Donec id facilisis velit. Nunc dapibus nibh lectus, non condimentum augue gravida ac. In gravida sapien quis eleifend sagittis. Nam sagittis bibendum dui, a accumsan orci placerat eu. Donec eu eros condimentum, rhoncus nibh in, interdum quam. Vivamus nisi turpis, pellentesque at risus quis, feugiat dapibus nunc. Donec volutpat lectus vitae massa sagittis, sit amet commodo massa aliquam. Donec euismod, nisi a aliquam imperdiet, sapien sapien efficitur libero, a lobortis nulla massa vel lectus. Fusce condimentum hendrerit sem vitae malesuada. Phasellus id elit augue. Aenean egestas vitae nulla vel cursus.
-            """
-    
     func runBenchmarks(completion: @escaping (()->Void)) {
         DispatchQueue.global(qos: .background).async {
+            
             let primeGroup = ReportGroup.build("Prime", objcMethod: {
                 _ = (OBNumeric.shared() as! OBNumeric).isPrimeLong(181)
             }, swiftMethod: {
@@ -76,23 +73,24 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWNumeric.shared.factorial(int: 13)
             })
-
+            
+            let textTest = self.lipsum() ?? "lorem ipsum"
             let sha1Group = ReportGroup.build("SHA1", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).sha1String(self.textTest)
+                _ = (OBCrypto.shared() as! OBCrypto).sha1String(textTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.sha1(string:self.textTest)
+                _ = SWCrypto.shared.sha1(string:textTest)
             })
 
             let sha256Group = ReportGroup.build("SHA256", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).sha256String(self.textTest)
+                _ = (OBCrypto.shared() as! OBCrypto).sha256String(textTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.sha256(string:self.textTest)
+                _ = SWCrypto.shared.sha256(string:textTest)
             })
 
             let base64Group = ReportGroup.build("Base64", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).base64String(self.textTest)
+                _ = (OBCrypto.shared() as! OBCrypto).base64String(textTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.base64(string:self.textTest)
+                _ = SWCrypto.shared.base64(string:textTest)
             })
             
             DispatchQueue.main.async {
@@ -102,6 +100,10 @@ class ReportView: UIView {
         }
     }
     
+    private func lipsum() -> String? {
+        guard let filepath = Bundle.main.path(forResource: "lipsum", ofType: "txt") else { return nil }
+        return try? String(contentsOfFile: filepath)
+    }
 }
 
 extension ReportView : UICollectionViewDelegate, UICollectionViewDataSource {

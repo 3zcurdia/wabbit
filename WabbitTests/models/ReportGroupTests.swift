@@ -12,15 +12,4 @@ import XCTest
 @testable import Wabbit
 
 class ReportGroupTests: XCTestCase {
-    
-    func testBuild() {
-        let reportGroup = ReportGroup.build("X", objcMethod: {
-            let x = 1+1
-        }, swiftMethod: {
-            let y = 1/1
-        })
-        XCTAssertEqual("X", reportGroup.title)
-        XCTAssertEqual(1.0, reportGroup.objcReport.baselineComparison())
-        XCTAssertEqual(2.0, reportGroup.objcReport.baselineComparison())
-    }
 }
