@@ -10,6 +10,7 @@
 		30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4A1FAD551600370EAC /* ReportViewCell.swift */; };
 		30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */; };
 		30130E541FAE229100370EAC /* lipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30130E531FAE229100370EAC /* lipsum.txt */; };
+		30130E581FAE414800370EAC /* logo128.png in Resources */ = {isa = PBXBuildFile; fileRef = 30130E571FAE414800370EAC /* logo128.png */; };
 		3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD981FAAD7D300E401C4 /* AppDelegate.swift */; };
 		3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */; };
 		3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		30130E4A1FAD551600370EAC /* ReportViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewCell.swift; sourceTree = "<group>"; };
 		30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGroup.swift; sourceTree = "<group>"; };
 		30130E531FAE229100370EAC /* lipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = lipsum.txt; sourceTree = "<group>"; };
+		30130E571FAE414800370EAC /* logo128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo128.png; sourceTree = "<group>"; };
 		3038CD951FAAD7D300E401C4 /* Wabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3038CD981FAAD7D300E401C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */,
 				3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */,
 				30130E531FAE229100370EAC /* lipsum.txt */,
+				30130E571FAE414800370EAC /* logo128.png */,
 			);
 			path = Wabbit;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			files = (
 				3038CDA31FAAD7D300E401C4 /* LaunchScreen.storyboard in Resources */,
 				30130E541FAE229100370EAC /* lipsum.txt in Resources */,
+				30130E581FAE414800370EAC /* logo128.png in Resources */,
 				3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

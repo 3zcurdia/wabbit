@@ -59,20 +59,24 @@ class ReportView: UIView {
             ])
     }
     
+    let backgroundQueue = DispatchQueue.global(qos: .background)
+    
     func runBenchmarks(completion: @escaping (()->Void)) {
-        DispatchQueue.global(qos: .background).async {
-            
+        backgroundQueue.async {
+            print("Running benchkarks...")
             let primeGroup = ReportGroup.build("Prime", objcMethod: {
                 _ = (OBNumeric.shared() as! OBNumeric).isPrimeLong(181)
             }, swiftMethod: {
                 _ = SWNumeric.shared.isPrime(int: 181)
             })
+            print("[Done] Prime")
 
             let factGroup = ReportGroup.build("Factorial", objcMethod: {
                 _ = (OBNumeric.shared() as! OBNumeric).factorialLong(13)
             }, swiftMethod: {
                 _ = SWNumeric.shared.factorial(int: 13)
             })
+            print("[Done] Factorial")
             
             let textTest = self.lipsum() ?? "lorem ipsum"
             let sha1Group = ReportGroup.build("SHA1", objcMethod: {
@@ -80,21 +84,32 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWCrypto.shared.sha1(string:textTest)
             })
+            print("[Done] SHA1")
 
             let sha256Group = ReportGroup.build("SHA256", objcMethod: {
                 _ = (OBCrypto.shared() as! OBCrypto).sha256String(textTest)
             }, swiftMethod: {
                 _ = SWCrypto.shared.sha256(string:textTest)
             })
+            print("[Done] SHA256")
 
-            let base64Group = ReportGroup.build("Base64", objcMethod: {
+            let base64Group = ReportGroup.build("Base64 Text", objcMethod: {
                 _ = (OBCrypto.shared() as! OBCrypto).base64String(textTest)
             }, swiftMethod: {
                 _ = SWCrypto.shared.base64(string:textTest)
             })
+            print("[Done] Base64")
+            
+            let imageTest = self.logoImage() ?? UIImage()
+            let base64ImageGroup = ReportGroup.build("Base64 Image", objcMethod: {
+                _ = (OBCrypto.shared() as! OBCrypto).base64Image(imageTest)
+            }, swiftMethod: {
+                _ = SWCrypto.shared.base64(image:imageTest)
+            })
+            print("[Done] Base64 Image")
             
             DispatchQueue.main.async {
-                self.reportGroups = [primeGroup, factGroup, sha1Group, sha256Group, base64Group]
+                self.reportGroups = [primeGroup, factGroup, sha1Group, sha256Group, base64Group, base64ImageGroup]
                 completion()
             }
         }
@@ -103,6 +118,11 @@ class ReportView: UIView {
     private func lipsum() -> String? {
         guard let filepath = Bundle.main.path(forResource: "lipsum", ofType: "txt") else { return nil }
         return try? String(contentsOfFile: filepath)
+    }
+    
+    private func logoImage() -> UIImage? {
+        guard let filepath = Bundle.main.path(forResource: "logo1128", ofType: "png") else { return nil }
+        return UIImage(contentsOfFile: filepath)
     }
 }
 

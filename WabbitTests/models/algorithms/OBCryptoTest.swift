@@ -27,4 +27,10 @@ class OBCryptoTests: XCTestCase {
         let expected = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNldGV0dXIgc2FkaXBzY2luZyBlbGl0ci4="
         XCTAssertEqual(expected, shared.base64String(text))
     }
+    
+    func testBase64Image() {
+        let filepath = Bundle.main.path(forResource: "logo128", ofType: "png")!
+        let image = UIImage(contentsOfFile: filepath)
+        XCTAssertNotNil(shared.base64Image(image))
+    }
 }

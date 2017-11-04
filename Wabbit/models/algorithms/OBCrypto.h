@@ -10,12 +10,14 @@
 #define OBCrypto_h
 #import <CommonCrypto/CommonDigest.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface OBCrypto : NSObject
 +(id) shared;
 -(NSString *) sha1String: (NSString *)input;
 -(NSString *) sha256String: (NSString *)input;
 -(NSString *) base64String: (NSString *)input;
+-(NSString *) base64Image:(UIImage *)input;
 @end
 
 #endif /* OBCrypto_h */

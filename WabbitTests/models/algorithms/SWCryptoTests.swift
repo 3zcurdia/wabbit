@@ -26,4 +26,9 @@ class SWCryptoTests: XCTestCase {
         let expected = "TG9yZW0gaXBzdW0gZG9sb3Igc2l0IGFtZXQsIGNvbnNldGV0dXIgc2FkaXBzY2luZyBlbGl0ci4="
         XCTAssertEqual(expected, SWCrypto.shared.base64(string: text))
     }
+    
+    func testBase64Image() {
+        let image = UIImage(named: "wabbit") ?? UIImage()
+        XCTAssertNotNil(SWCrypto.shared.base64(image:image))
+    }
 }

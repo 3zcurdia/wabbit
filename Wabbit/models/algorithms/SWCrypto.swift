@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class SWCrypto {
     static let shared = SWCrypto()
@@ -43,5 +44,9 @@ class SWCrypto {
     
     func base64(string:String) -> String {
         return String(data: Data(string.utf8).base64EncodedData(), encoding: .utf8) ?? ""
+    }
+    
+    func base64(image:UIImage) -> String {
+        return UIImagePNGRepresentation(image)?.base64EncodedString(options: .lineLength64Characters) ?? ""
     }
 }
