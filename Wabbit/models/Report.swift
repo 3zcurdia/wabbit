@@ -11,7 +11,28 @@ import Foundation
 struct Report {
     let name: String
     let time: Double
+    var baseline: Double? = nil
+
     func ips() -> Int {
         return Int(1.0/time)
+    }
+
+    func baselineComparison() -> Double {
+        guard let baselineTime = baseline else { return 1.0 }
+        return self.time / baselineTime
+    }
+}
+
+extension Sequence where Iterator.Element == Report {
+    func baselineTime() -> Double? {
+        let sorted = self.sorted(by: { $0.time < $1.time })
+        return sorted.first?.time
+    }    
+}
+
+extension Double {
+    func rounded(toDigits digits:Int) -> Double {
+        let divisor = pow(10.0, Double(digits))
+        return (self * divisor).rounded() / divisor
     }
 }

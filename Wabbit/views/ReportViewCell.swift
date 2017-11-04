@@ -9,6 +9,11 @@
 import UIKit
 
 class ReportViewCell: UICollectionViewCell {
+    var reportGroup : ReportGroup? {
+        didSet{
+            updateViews()
+        }
+    }
     private let titleLabel : UILabel = {
         let tv = UILabel()
         tv.text = "Report Group"
@@ -71,5 +76,23 @@ class ReportViewCell: UICollectionViewCell {
             swiftReportView.trailingAnchor.constraint(equalTo: trailingAnchor),
             swiftReportView.bottomAnchor.constraint(equalTo: bottomAnchor),
             ])
+    }
+    
+    private func updateViews() {
+        guard let report = reportGroup else { return }
+        titleLabel.text = report.title
+        objcReportView.attributedText = extractFormattedText(report: report.objcReport)
+        swiftReportView.attributedText = extractFormattedText(report: report.swiftReport)
+    }
+    
+    private func extractFormattedText(report:Report) -> NSAttributedString {
+        let elapsed = report.time.rounded(toDigits: 10)
+        let ips = report.ips()
+        let comparison = report.baselineComparison().rounded(toDigits: 2)
+        let attributedText = NSMutableAttributedString(string: "\(elapsed) [s]", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)])
+        attributedText.append(NSAttributedString(string: "\n\(ips) [ips]", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
+        attributedText.append(NSAttributedString(string: "\n\(comparison)x", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: .bold)]))
+        return attributedText
+        
     }
 }

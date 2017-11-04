@@ -8,17 +8,28 @@
 
 import Foundation
 
-struct Benchmark {
-    var reports : [Report]?
-    func compare() -> [String:Double]? {
-        guard let unrappedReports = reports, unrappedReports.count > 1 else { return nil }
-        let sortedReports = unrappedReports.sorted(by: { $0.time < $1.time })
-        let baseline = sortedReports.first!.time
-        var comparsions = [String:Double]()
-        for report in unrappedReports {
-            comparsions[report.name] = (report.time / baseline)
+class Benchmark {
+    static let sharedSession = Benchmark()
+    let times : Int
+    let warmup : UInt
+    
+    init(times: Int = 1_000, warmup: UInt = 5) {
+        self.times = times
+        self.warmup = warmup
+    }
+    
+    func run(_ name : String, block : @escaping VoidFuncClosure) -> Report {
+        var startTime : Date
+        var endTime : Date
+        var samples = [Double]()
+        for _ in 0..<self.warmup { block() }
+        for _ in 0..<self.times {
+            startTime = Date()
+            block()
+            endTime = Date()
+            samples.append(endTime.timeIntervalSince(startTime))
         }
-        return comparsions
+        let avg = (samples.reduce(0,+)) / Double(samples.count)
+        return Report(name: name, time: avg, baseline: nil)
     }
 }
-
