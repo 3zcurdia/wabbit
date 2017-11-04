@@ -29,7 +29,14 @@ class Benchmark {
             endTime = Date()
             samples.append(endTime.timeIntervalSince(startTime))
         }
-        let avg = (samples.reduce(0,+)) / Double(samples.count)
-        return Report(name: name, time: avg, baseline: nil)
+        let sum = samples.reduce(0,+)
+        if samples.count > 10 {
+            if let min = samples.min(), let max = samples.max() {
+                let minmax = min + max
+                return Report(name: name, time: (sum - minmax) / Double(samples.count-2), baseline: nil)
+            }
+        }
+        return Report(name: name, time: sum / Double(samples.count), baseline: nil)
+
     }
 }
