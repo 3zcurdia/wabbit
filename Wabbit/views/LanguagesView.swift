@@ -13,7 +13,7 @@ class LanguagesView: UIView {
         let iv = UIImageView()
         iv.image = UIImage(named: "objc")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .platinum
-        iv.backgroundColor = .yankeesBlue
+        iv.backgroundColor = .tangerine
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -23,7 +23,7 @@ class LanguagesView: UIView {
         let iv = UIImageView()
         iv.image = UIImage(named: "swift")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = UIColor.platinum
-        iv.backgroundColor = UIColor.yankeesBlue
+        iv.backgroundColor = UIColor.tangerine
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
