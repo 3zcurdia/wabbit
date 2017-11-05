@@ -20,14 +20,14 @@ class ReportView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .yankeesBlue
+        cv.backgroundColor = .black
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
     
     var reportGroups : [ReportGroup]? {
         didSet {
-            reportsCollection.reloadData()
+            DispatchQueue.main.async { self.reportsCollection.reloadData() }
         }
     }
     override init(frame: CGRect) {
@@ -63,6 +63,7 @@ class ReportView: UIView {
     
     func runBenchmarks(completion: @escaping (()->Void)) {
         backgroundQueue.async {
+            self.reportGroups = []
             print("Running benchkarks...")
             let primeGroup = ReportGroup.build("Prime", objcMethod: {
                 _ = (OBNumeric.shared() as! OBNumeric).isPrimeLong(181)
@@ -70,12 +71,14 @@ class ReportView: UIView {
                 _ = SWNumeric.shared.isPrime(int: 181)
             })
             print("[Done] Prime")
+            self.reportGroups?.append(primeGroup)
 
             let factGroup = ReportGroup.build("Factorial", objcMethod: {
                 _ = (OBNumeric.shared() as! OBNumeric).factorialLong(13)
             }, swiftMethod: {
                 _ = SWNumeric.shared.factorial(int: 13)
             })
+            self.reportGroups?.append(factGroup)
             print("[Done] Factorial")
             
             let textTest = self.lipsum() ?? "lorem ipsum"
@@ -84,6 +87,7 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWCrypto.shared.sha1(string:textTest)
             })
+            self.reportGroups?.append(sha1Group)
             print("[Done] SHA1")
 
             let sha256Group = ReportGroup.build("SHA256", objcMethod: {
@@ -91,6 +95,7 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWCrypto.shared.sha256(string:textTest)
             })
+            self.reportGroups?.append(sha256Group)
             print("[Done] SHA256")
 
             let base64Group = ReportGroup.build("Base64 Text", objcMethod: {
@@ -98,6 +103,7 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWCrypto.shared.base64(string:textTest)
             })
+            self.reportGroups?.append(base64Group)
             print("[Done] Base64")
             
             let imageTest = self.logoImage() ?? UIImage()
@@ -106,10 +112,10 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWCrypto.shared.base64(image:imageTest)
             })
+            self.reportGroups?.append(base64ImageGroup)
             print("[Done] Base64 Image")
             
             DispatchQueue.main.async {
-                self.reportGroups = [primeGroup, factGroup, sha1Group, sha256Group, base64Group, base64ImageGroup]
                 completion()
             }
         }
