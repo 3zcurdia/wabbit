@@ -34,6 +34,7 @@
 		30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* OBNumeric.m */; };
 		30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */; };
 		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
+		30C6C0A41FAEEC90007C06D5 /* SwipeActionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		30B2C4681FAB8D8100A4B683 /* OBNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBNumeric.m; sourceTree = "<group>"; };
 		30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBNumericTest.swift; sourceTree = "<group>"; };
 		30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
+		30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 				3047EDBC1FAC168300BAE236 /* LanguagesView.swift */,
 				3047EDC01FACD94300BAE236 /* ReportView.swift */,
 				30130E4A1FAD551600370EAC /* ReportViewCell.swift */,
+				30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */,
 				30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */,
 				30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */,
+				30C6C0A41FAEEC90007C06D5 /* SwipeActionViewCell.swift in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
 				3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */,
 				3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */,

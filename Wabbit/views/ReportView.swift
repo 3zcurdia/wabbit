@@ -10,6 +10,7 @@ import UIKit
 
 class ReportView: UIView {
     let reuseIdentifier = "reportCell"
+    let reuseActionIdentifier = "actionViewCell"
     let langView : LanguagesView = {
         let lv = LanguagesView()
         lv.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +22,9 @@ class ReportView: UIView {
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .black
+        cv.refreshControl = UIRefreshControl()
+        cv.refreshControl?.backgroundColor = .platinum
+        cv.refreshControl?.addTarget(self, action: #selector(refreshBenchmarks), for: .valueChanged)
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -33,6 +37,7 @@ class ReportView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         reportsCollection.register(ReportViewCell.self, forCellWithReuseIdentifier: self.reuseIdentifier)
+        reportsCollection.register(SwipeActionViewCell.self, forCellWithReuseIdentifier: self.reuseActionIdentifier)
         reportsCollection.delegate = self
         reportsCollection.dataSource = self
         setupLayout()
@@ -59,9 +64,16 @@ class ReportView: UIView {
             ])
     }
     
+    @objc func refreshBenchmarks() {
+        reportsCollection.refreshControl?.beginRefreshing()
+        runBenchmarks {
+            self.reportsCollection.refreshControl?.endRefreshing()
+        }
+    }
+
     let backgroundQueue = DispatchQueue.global(qos: .background)
     
-    func runBenchmarks(completion: @escaping (()->Void)) {
+    private func runBenchmarks(completion: @escaping (()->Void)) {
         backgroundQueue.async {
             self.reportGroups = []
             print("Running benchkarks...")
@@ -134,19 +146,27 @@ class ReportView: UIView {
 
 extension ReportView : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reportGroups?.count ?? 0
+        return reportGroups?.count ?? 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ReportViewCell
-        cell.reportGroup = reportGroups?[indexPath.row]
-        return cell
+        if let unwrapedGroups = reportGroups {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ReportViewCell
+            cell.reportGroup = unwrapedGroups[indexPath.row]
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseActionIdentifier, for: indexPath) as! SwipeActionViewCell
+            cell.text = "Swipe down to run benchmarks!"
+            return cell
+        }
     }
 }
 
 extension ReportView : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: reportsCollection.frame.width, height: 125)
+        var height : CGFloat = 125.0
+        if reportGroups == nil { height = reportsCollection.frame.height }
+        return CGSize(width: reportsCollection.frame.width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
