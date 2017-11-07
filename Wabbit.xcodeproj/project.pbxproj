@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20FB32F64C51DC0AA951E899 /* Pods_WabbitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */; };
 		30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4A1FAD551600370EAC /* ReportViewCell.swift */; };
 		30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */; };
 		30130E541FAE229100370EAC /* lipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30130E531FAE229100370EAC /* lipsum.txt */; };
@@ -42,6 +43,8 @@
 		30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */; };
 		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
 		30C6C0A41FAEEC90007C06D5 /* SwipeActionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */; };
+		C9F38B71259013E9C237B171 /* Pods_Wabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD894B927E45DB96151B721E /* Pods_Wabbit.framework */; };
+		F90F6A2931E3262789698DE6 /* Pods_WabbitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980F380D34D80490057FD411 /* Pods_WabbitUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,15 @@
 		30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBNumericTest.swift; sourceTree = "<group>"; };
 		30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
 		30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionViewCell.swift; sourceTree = "<group>"; };
+		62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WabbitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		768CD3E0E6117D085B287607 /* Pods-Wabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.release.xcconfig"; sourceTree = "<group>"; };
+		980F380D34D80490057FD411 /* Pods_WabbitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WabbitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		990794471228744CCCF80CA2 /* Pods-WabbitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A71C9F66805C0A11CA8B6B1B /* Pods-WabbitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests.release.xcconfig"; sourceTree = "<group>"; };
+		B035CE2E9FF89EBD8BA2902A /* Pods-Wabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.debug.xcconfig"; sourceTree = "<group>"; };
+		BB693CABF8FD5329E57D9D43 /* Pods-WabbitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD894B927E45DB96151B721E /* Pods_Wabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B7ADC6D8471840F28EB5D9 /* Pods-WabbitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9F38B71259013E9C237B171 /* Pods_Wabbit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FB32F64C51DC0AA951E899 /* Pods_WabbitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,12 +143,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90F6A2931E3262789698DE6 /* Pods_WabbitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DF29F8197C7A44302EAC099 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B035CE2E9FF89EBD8BA2902A /* Pods-Wabbit.debug.xcconfig */,
+				768CD3E0E6117D085B287607 /* Pods-Wabbit.release.xcconfig */,
+				BB693CABF8FD5329E57D9D43 /* Pods-WabbitTests.debug.xcconfig */,
+				A71C9F66805C0A11CA8B6B1B /* Pods-WabbitTests.release.xcconfig */,
+				990794471228744CCCF80CA2 /* Pods-WabbitUITests.debug.xcconfig */,
+				F1B7ADC6D8471840F28EB5D9 /* Pods-WabbitUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3038CD8C1FAAD7D300E401C4 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +170,8 @@
 				3038CDAC1FAAD7D300E401C4 /* WabbitTests */,
 				3038CDB71FAAD7D300E401C4 /* WabbitUITests */,
 				3038CD961FAAD7D300E401C4 /* Products */,
+				2DF29F8197C7A44302EAC099 /* Pods */,
+				8CFCCC6CA008DC6DFB40567F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -275,6 +305,16 @@
 			path = jsonparse;
 			sourceTree = "<group>";
 		};
+		8CFCCC6CA008DC6DFB40567F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD894B927E45DB96151B721E /* Pods_Wabbit.framework */,
+				62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */,
+				980F380D34D80490057FD411 /* Pods_WabbitUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,9 +322,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3038CDBD1FAAD7D300E401C4 /* Build configuration list for PBXNativeTarget "Wabbit" */;
 			buildPhases = (
+				9A6EC3AE82D86961F0E844AC /* [CP] Check Pods Manifest.lock */,
 				3038CD911FAAD7D300E401C4 /* Sources */,
 				3038CD921FAAD7D300E401C4 /* Frameworks */,
 				3038CD931FAAD7D300E401C4 /* Resources */,
+				A69C1595A2E8FD21F7B458C7 /* [CP] Embed Pods Frameworks */,
+				E9BF86B8B369D2AA941FDA4D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,9 +342,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3038CDC01FAAD7D300E401C4 /* Build configuration list for PBXNativeTarget "WabbitTests" */;
 			buildPhases = (
+				BC9D01E894734939F2C1C2AE /* [CP] Check Pods Manifest.lock */,
 				3038CDA51FAAD7D300E401C4 /* Sources */,
 				3038CDA61FAAD7D300E401C4 /* Frameworks */,
 				3038CDA71FAAD7D300E401C4 /* Resources */,
+				2CA033165EF77FA865607C78 /* [CP] Embed Pods Frameworks */,
+				31167F321BC02FBB15768053 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,9 +363,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3038CDC31FAAD7D300E401C4 /* Build configuration list for PBXNativeTarget "WabbitUITests" */;
 			buildPhases = (
+				18B46F423E5FDC43037F96AE /* [CP] Check Pods Manifest.lock */,
 				3038CDB01FAAD7D300E401C4 /* Sources */,
 				3038CDB11FAAD7D300E401C4 /* Frameworks */,
 				3038CDB21FAAD7D300E401C4 /* Resources */,
+				7F149B4838C948D01D91CE45 /* [CP] Embed Pods Frameworks */,
+				BE3CDAA9976E122E5C2A9607 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -406,6 +455,156 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18B46F423E5FDC43037F96AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WabbitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CA033165EF77FA865607C78 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		31167F321BC02FBB15768053 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F149B4838C948D01D91CE45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A6EC3AE82D86961F0E844AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wabbit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A69C1595A2E8FD21F7B458C7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC9D01E894734939F2C1C2AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WabbitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE3CDAA9976E122E5C2A9607 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9BF86B8B369D2AA941FDA4D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3038CD911FAAD7D300E401C4 /* Sources */ = {
@@ -595,6 +794,7 @@
 		};
 		3038CDBE1FAAD7D300E401C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B035CE2E9FF89EBD8BA2902A /* Pods-Wabbit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -613,6 +813,7 @@
 		};
 		3038CDBF1FAAD7D300E401C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 768CD3E0E6117D085B287607 /* Pods-Wabbit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -630,6 +831,7 @@
 		};
 		3038CDC11FAAD7D300E401C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB693CABF8FD5329E57D9D43 /* Pods-WabbitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -647,6 +849,7 @@
 		};
 		3038CDC21FAAD7D300E401C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A71C9F66805C0A11CA8B6B1B /* Pods-WabbitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -664,6 +867,7 @@
 		};
 		3038CDC41FAAD7D300E401C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990794471228744CCCF80CA2 /* Pods-WabbitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,6 +884,7 @@
 		};
 		3038CDC51FAAD7D300E401C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1B7ADC6D8471840F28EB5D9 /* Pods-WabbitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
