@@ -82,7 +82,6 @@ class ReportView: UIView {
             }, swiftMethod: {
                 _ = SWNumeric.shared.isPrime(int: 181)
             })
-            print("[Done] Prime")
             self.reportGroups?.append(primeGroup)
 
             let factGroup = ReportGroup.build("Factorial", objcMethod: {
@@ -91,7 +90,6 @@ class ReportView: UIView {
                 _ = SWNumeric.shared.factorial(int: 13)
             })
             self.reportGroups?.append(factGroup)
-            print("[Done] Factorial")
             
             let textTest = self.lipsum() ?? "lorem ipsum"
             let sha1Group = ReportGroup.build("SHA1", objcMethod: {
@@ -100,7 +98,6 @@ class ReportView: UIView {
                 _ = SWCrypto.shared.sha1(string:textTest)
             })
             self.reportGroups?.append(sha1Group)
-            print("[Done] SHA1")
 
             let sha256Group = ReportGroup.build("SHA256", objcMethod: {
                 _ = (OBCrypto.shared() as! OBCrypto).sha256String(textTest)
@@ -108,7 +105,6 @@ class ReportView: UIView {
                 _ = SWCrypto.shared.sha256(string:textTest)
             })
             self.reportGroups?.append(sha256Group)
-            print("[Done] SHA256")
 
             let base64Group = ReportGroup.build("Base64 Text", objcMethod: {
                 _ = (OBCrypto.shared() as! OBCrypto).base64String(textTest)
@@ -116,7 +112,6 @@ class ReportView: UIView {
                 _ = SWCrypto.shared.base64(string:textTest)
             })
             self.reportGroups?.append(base64Group)
-            print("[Done] Base64")
             
             let imageTest = self.logoImage() ?? UIImage()
             let base64ImageGroup = ReportGroup.build("Base64 Image", objcMethod: {
@@ -125,7 +120,6 @@ class ReportView: UIView {
                 _ = SWCrypto.shared.base64(image:imageTest)
             })
             self.reportGroups?.append(base64ImageGroup)
-            print("[Done] Base64 Image")
             
             DispatchQueue.main.async {
                 completion()

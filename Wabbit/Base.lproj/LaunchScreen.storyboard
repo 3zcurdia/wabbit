@@ -27,7 +27,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" name="tangerine"/>
+                        <color key="backgroundColor" name="yankees blue"/>
                         <constraints>
                             <constraint firstItem="eih-Ye-Bra" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="CRN-Ts-y3N"/>
                             <constraint firstItem="eih-Ye-Bra" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="atd-Vc-CTO"/>
@@ -42,8 +42,8 @@
     </scenes>
     <resources>
         <image name="wabbit" width="341" height="341"/>
-        <namedColor name="tangerine">
-            <color red="0.88235294117647056" green="0.39215686274509803" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="yankees blue">
+            <color red="0.078431372549019607" green="0.12941176470588237" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
