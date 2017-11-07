@@ -21,7 +21,7 @@ class DeviceInfoView: UIView {
         let iv = UIImageView()
         iv.image = UIImage(named: "iphone")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .white
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -64,7 +64,7 @@ class DeviceInfoView: UIView {
             ])
         addSubview(infoTextView)
         NSLayoutConstraint.activate([
-            infoTextView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            infoTextView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             infoTextView.leadingAnchor.constraint(equalTo: container.trailingAnchor),
             infoTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
             infoTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -73,7 +73,7 @@ class DeviceInfoView: UIView {
     
     private func loadInfo() {
         let foregroundColor = UIColor.white
-        let attributedText = NSMutableAttributedString(string: "\n\(devise.modelName)", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26), NSAttributedStringKey.foregroundColor: foregroundColor])
+        let attributedText = NSMutableAttributedString(string: "\(devise.modelName)", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26), NSAttributedStringKey.foregroundColor: foregroundColor])
         attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor]))
         infoTextView.attributedText = attributedText
     }

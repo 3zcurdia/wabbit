@@ -70,13 +70,10 @@ class ReportView: UIView {
             self.reportsCollection.refreshControl?.endRefreshing()
         }
     }
-
-    let backgroundQueue = DispatchQueue.global(qos: .background)
     
     private func runBenchmarks(completion: @escaping (()->Void)) {
-        backgroundQueue.async {
+        DispatchQueue.global(qos: .background).async {
             self.reportGroups = []
-            print("Running benchkarks...")
             let primeGroup = ReportGroup.build("Prime", objcMethod: {
                 _ = (OBNumeric.shared() as! OBNumeric).isPrimeLong(181)
             }, swiftMethod: {
@@ -121,6 +118,14 @@ class ReportView: UIView {
             })
             self.reportGroups?.append(base64ImageGroup)
             
+            let jsonTest = self.jsonFile() ?? "[]"
+            let jsonGroup = ReportGroup.build("Decode JSON", objcMethod: {
+                _ = (OBJsonParse.shared() as! OBJsonParse).parseAllCountries(from: jsonTest.data(using: .utf8))
+            }, swiftMethod: {
+                _ = SWJsonParse.shared.parseAllCountries(string: jsonTest)
+            })
+            self.reportGroups?.append(jsonGroup)
+            
             DispatchQueue.main.async {
                 completion()
             }
@@ -135,6 +140,11 @@ class ReportView: UIView {
     private func logoImage() -> UIImage? {
         guard let filepath = Bundle.main.path(forResource: "logo1128", ofType: "png") else { return nil }
         return UIImage(contentsOfFile: filepath)
+    }
+    
+    private func jsonFile() -> String? {
+        guard let filepath = Bundle.main.path(forResource: "countries", ofType: "json") else { return nil }
+        return try? String(contentsOfFile: filepath)
     }
 }
 

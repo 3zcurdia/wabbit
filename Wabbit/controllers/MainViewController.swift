@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
             infoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            infoView.heightAnchor.constraint(equalToConstant: 140)
+            infoView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14)
             ])
         reportView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(reportView)

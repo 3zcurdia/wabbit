@@ -31,6 +31,13 @@
 		3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBC1FAC168300BAE236 /* LanguagesView.swift */; };
 		3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */; };
 		3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDC01FACD94300BAE236 /* ReportView.swift */; };
+		30ABE1961FB174210014082D /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 30ABE1951FB174200014082D /* countries.json */; };
+		30ABE1991FB174740014082D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1981FB174740014082D /* Country.swift */; };
+		30ABE19B1FB175240014082D /* SWJsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19A1FB175240014082D /* SWJsonParseTests.swift */; };
+		30ABE19D1FB177630014082D /* SWJsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19C1FB177630014082D /* SWJsonParse.swift */; };
+		30ABE1A21FB17D050014082D /* OBJsonParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A11FB17D050014082D /* OBJsonParse.m */; };
+		30ABE1A51FB218130014082D /* OBCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A41FB218130014082D /* OBCountry.m */; };
+		30ABE1A71FB222090014082D /* OBJsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A61FB222090014082D /* OBJsonParseTests.swift */; };
 		30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* OBNumeric.m */; };
 		30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */; };
 		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
@@ -87,6 +94,15 @@
 		3047EDBC1FAC168300BAE236 /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
 		3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		3047EDC01FACD94300BAE236 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		30ABE1951FB174200014082D /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		30ABE1981FB174740014082D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		30ABE19A1FB175240014082D /* SWJsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWJsonParseTests.swift; sourceTree = "<group>"; };
+		30ABE19C1FB177630014082D /* SWJsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWJsonParse.swift; sourceTree = "<group>"; };
+		30ABE1A01FB17D050014082D /* OBJsonParse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJsonParse.h; sourceTree = "<group>"; };
+		30ABE1A11FB17D050014082D /* OBJsonParse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJsonParse.m; sourceTree = "<group>"; };
+		30ABE1A31FB218130014082D /* OBCountry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCountry.h; sourceTree = "<group>"; };
+		30ABE1A41FB218130014082D /* OBCountry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCountry.m; sourceTree = "<group>"; };
+		30ABE1A61FB222090014082D /* OBJsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJsonParseTests.swift; sourceTree = "<group>"; };
 		30B2C4671FAB8D8100A4B683 /* OBNumeric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBNumeric.h; sourceTree = "<group>"; };
 		30B2C4681FAB8D8100A4B683 /* OBNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBNumeric.m; sourceTree = "<group>"; };
 		30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBNumericTest.swift; sourceTree = "<group>"; };
@@ -153,6 +169,7 @@
 				3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */,
 				30130E531FAE229100370EAC /* lipsum.txt */,
 				30130E571FAE414800370EAC /* logo128.png */,
+				30ABE1951FB174200014082D /* countries.json */,
 			);
 			path = Wabbit;
 			sourceTree = "<group>";
@@ -199,6 +216,7 @@
 		3038CDC81FAAE28C00E401C4 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				30ABE1971FB1745E0014082D /* jsonparse */,
 				3038CDCE1FAAEA4600E401C4 /* algorithms */,
 				3038CDC91FAAE38100E401C4 /* Report.swift */,
 				3038CDCB1FAAE39800E401C4 /* Benchmark.swift */,
@@ -222,10 +240,13 @@
 			children = (
 				3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */,
 				3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */,
+				30ABE19C1FB177630014082D /* SWJsonParse.swift */,
 				3038CDD11FAAED4600E401C4 /* OBCrypto.h */,
 				3038CDD31FAAED6700E401C4 /* OBCrypto.m */,
 				30B2C4671FAB8D8100A4B683 /* OBNumeric.h */,
 				30B2C4681FAB8D8100A4B683 /* OBNumeric.m */,
+				30ABE1A01FB17D050014082D /* OBJsonParse.h */,
+				30ABE1A11FB17D050014082D /* OBJsonParse.m */,
 				3038CDD21FAAED6600E401C4 /* Wabbit-Bridging-Header.h */,
 			);
 			path = algorithms;
@@ -236,10 +257,22 @@
 			children = (
 				3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */,
 				3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */,
+				30ABE19A1FB175240014082D /* SWJsonParseTests.swift */,
 				3038CDE31FAB875100E401C4 /* OBCryptoTest.swift */,
 				30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */,
+				30ABE1A61FB222090014082D /* OBJsonParseTests.swift */,
 			);
 			path = algorithms;
+			sourceTree = "<group>";
+		};
+		30ABE1971FB1745E0014082D /* jsonparse */ = {
+			isa = PBXGroup;
+			children = (
+				30ABE1981FB174740014082D /* Country.swift */,
+				30ABE1A31FB218130014082D /* OBCountry.h */,
+				30ABE1A41FB218130014082D /* OBCountry.m */,
+			);
+			path = jsonparse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +386,7 @@
 				3038CDA31FAAD7D300E401C4 /* LaunchScreen.storyboard in Resources */,
 				30130E541FAE229100370EAC /* lipsum.txt in Resources */,
 				30130E581FAE414800370EAC /* logo128.png in Resources */,
+				30ABE1961FB174210014082D /* countries.json in Resources */,
 				3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,16 +412,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30ABE19D1FB177630014082D /* SWJsonParse.swift in Sources */,
 				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
 				30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */,
 				3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */,
 				3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */,
 				3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */,
+				30ABE1A21FB17D050014082D /* OBJsonParse.m in Sources */,
 				30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */,
 				30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */,
 				30C6C0A41FAEEC90007C06D5 /* SwipeActionViewCell.swift in Sources */,
+				30ABE1A51FB218130014082D /* OBCountry.m in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
 				3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */,
+				30ABE1991FB174740014082D /* Country.swift in Sources */,
 				3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */,
 				3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */,
 				3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */,
@@ -403,6 +441,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3038CDDA1FAAF02000E401C4 /* SWCryptoTests.swift in Sources */,
+				30ABE19B1FB175240014082D /* SWJsonParseTests.swift in Sources */,
+				30ABE1A71FB222090014082D /* OBJsonParseTests.swift in Sources */,
 				3038CDE21FAB055000E401C4 /* BenchmarkTests.swift in Sources */,
 				30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */,
 				3038CDDE1FAAF62300E401C4 /* SWNumericTests.swift in Sources */,
