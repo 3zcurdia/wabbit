@@ -39,6 +39,7 @@
 		30ABE1A21FB17D050014082D /* OBJsonParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A11FB17D050014082D /* OBJsonParse.m */; };
 		30ABE1A51FB218130014082D /* OBCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A41FB218130014082D /* OBCountry.m */; };
 		30ABE1A71FB222090014082D /* OBJsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A61FB222090014082D /* OBJsonParseTests.swift */; };
+		30ABE1AA1FB271E50014082D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A81FB271DE0014082D /* SnapshotHelper.swift */; };
 		30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* OBNumeric.m */; };
 		30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */; };
 		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
@@ -106,18 +107,22 @@
 		30ABE1A31FB218130014082D /* OBCountry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCountry.h; sourceTree = "<group>"; };
 		30ABE1A41FB218130014082D /* OBCountry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCountry.m; sourceTree = "<group>"; };
 		30ABE1A61FB222090014082D /* OBJsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJsonParseTests.swift; sourceTree = "<group>"; };
+		30ABE1A81FB271DE0014082D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		30B2C4671FAB8D8100A4B683 /* OBNumeric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBNumeric.h; sourceTree = "<group>"; };
 		30B2C4681FAB8D8100A4B683 /* OBNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBNumeric.m; sourceTree = "<group>"; };
 		30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBNumericTest.swift; sourceTree = "<group>"; };
 		30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
 		30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionViewCell.swift; sourceTree = "<group>"; };
+		481BA205AA4D811F6070ED71 /* Pods-Wabbit.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.adhoc.xcconfig"; sourceTree = "<group>"; };
 		62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WabbitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768CD3E0E6117D085B287607 /* Pods-Wabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.release.xcconfig"; sourceTree = "<group>"; };
+		8A8EC91824695EF8B5E2234B /* Pods-WabbitUITests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitUITests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		980F380D34D80490057FD411 /* Pods_WabbitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WabbitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990794471228744CCCF80CA2 /* Pods-WabbitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A71C9F66805C0A11CA8B6B1B /* Pods-WabbitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests.release.xcconfig"; sourceTree = "<group>"; };
 		B035CE2E9FF89EBD8BA2902A /* Pods-Wabbit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.debug.xcconfig"; sourceTree = "<group>"; };
 		BB693CABF8FD5329E57D9D43 /* Pods-WabbitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D5D9DE92A15BF434C738F151 /* Pods-WabbitTests.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitTests.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitTests/Pods-WabbitTests.adhoc.xcconfig"; sourceTree = "<group>"; };
 		DD894B927E45DB96151B721E /* Pods_Wabbit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wabbit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1B7ADC6D8471840F28EB5D9 /* Pods-WabbitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WabbitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WabbitUITests/Pods-WabbitUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +164,9 @@
 				A71C9F66805C0A11CA8B6B1B /* Pods-WabbitTests.release.xcconfig */,
 				990794471228744CCCF80CA2 /* Pods-WabbitUITests.debug.xcconfig */,
 				F1B7ADC6D8471840F28EB5D9 /* Pods-WabbitUITests.release.xcconfig */,
+				481BA205AA4D811F6070ED71 /* Pods-Wabbit.adhoc.xcconfig */,
+				D5D9DE92A15BF434C738F151 /* Pods-WabbitTests.adhoc.xcconfig */,
+				8A8EC91824695EF8B5E2234B /* Pods-WabbitUITests.adhoc.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				3038CDB81FAAD7D300E401C4 /* WabbitUITests.swift */,
+				30ABE1A81FB271DE0014082D /* SnapshotHelper.swift */,
 				3038CDBA1FAAD7D300E401C4 /* Info.plist */,
 			);
 			path = WabbitUITests;
@@ -655,6 +664,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3038CDB91FAAD7D300E401C4 /* WabbitUITests.swift in Sources */,
+				30ABE1AA1FB271E50014082D /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +809,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D3XL2U7DQC;
 				INFOPLIST_FILE = Wabbit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -808,6 +819,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -818,6 +830,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D3XL2U7DQC;
 				INFOPLIST_FILE = Wabbit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -826,6 +839,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Wabbit/models/algorithms/Wabbit-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

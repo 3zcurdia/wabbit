@@ -131,3 +131,4 @@ playground.xcworkspace
 
 # End of https://www.gitignore.io/api/osx,swift,cocoapods,objective-c
 .env
+provisioning/
