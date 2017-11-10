@@ -9,15 +9,15 @@
 import UIKit
 
 class ReportView: UIView {
-    let reuseIdentifier = "reportCell"
-    let reuseActionIdentifier = "actionViewCell"
-    let langView : LanguagesView = {
+    let reportCellId = "reportCell"
+    let actionCellId = "actionCell"
+    let langView: LanguagesView = {
         let lv = LanguagesView()
         lv.translatesAutoresizingMaskIntoConstraints = false
         return lv
     }()
-    
-    let reportsCollection : UICollectionView = {
+
+    let reportsCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -28,25 +28,25 @@ class ReportView: UIView {
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
-    
-    var reportGroups : [ReportGroup]? {
+
+    var reportGroups: [ReportGroup]? {
         didSet {
             DispatchQueue.main.async { self.reportsCollection.reloadData() }
         }
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        reportsCollection.register(ReportViewCell.self, forCellWithReuseIdentifier: self.reuseIdentifier)
-        reportsCollection.register(SwipeActionViewCell.self, forCellWithReuseIdentifier: self.reuseActionIdentifier)
+        reportsCollection.register(ReportViewCell.self, forCellWithReuseIdentifier: self.reportCellId)
+        reportsCollection.register(SwipeActionViewCell.self, forCellWithReuseIdentifier: self.actionCellId)
         reportsCollection.delegate = self
         reportsCollection.dataSource = self
         setupLayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupLayout() {
         addSubview(langView)
         NSLayoutConstraint.activate([
@@ -63,7 +63,7 @@ class ReportView: UIView {
             reportsCollection.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
-    
+
     @objc func refreshBenchmarks() {
         reportsCollection.refreshControl?.beginRefreshing()
         BenchmarkService.shared.run(onUpdate: { reports in
@@ -74,37 +74,42 @@ class ReportView: UIView {
     }
 }
 
-extension ReportView : UICollectionViewDelegate, UICollectionViewDataSource {
+extension ReportView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return reportGroups?.count ?? 1
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let unwrapedGroups = reportGroups {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ReportViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reportCellId,
+                                                                for: indexPath) as? ReportViewCell else { return UICollectionViewCell() }
             cell.reportGroup = unwrapedGroups[indexPath.row]
             return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseActionIdentifier, for: indexPath) as! SwipeActionViewCell
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: actionCellId,
+                                                                for: indexPath) as? SwipeActionViewCell else { return UICollectionViewCell() }
             cell.text = "Swipe down to run benchmarks!"
             return cell
         }
     }
 }
 
-extension ReportView : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var height : CGFloat = 125.0
+extension ReportView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var height: CGFloat = 125.0
         if reportGroups == nil { height = reportsCollection.frame.height }
         return CGSize(width: reportsCollection.frame.width, height: height)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
 
     func invalidateCollectionViewLayout() {
         self.reportsCollection.collectionViewLayout.invalidateLayout()
     }
-
 }

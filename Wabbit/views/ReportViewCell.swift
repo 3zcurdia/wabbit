@@ -9,12 +9,12 @@
 import UIKit
 
 class ReportViewCell: UICollectionViewCell {
-    var reportGroup : ReportGroup? {
-        didSet{
+    var reportGroup: ReportGroup? {
+        didSet {
             updateViews()
         }
     }
-    private let titleLabel : UILabel = {
+    private let titleLabel: UILabel = {
         let tv = UILabel()
         tv.text = "Report Group"
         tv.textColor = .white
@@ -23,8 +23,8 @@ class ReportViewCell: UICollectionViewCell {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
-    
-    private let objcReportView : UITextView = {
+
+    private let objcReportView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .platinum
         tv.isSelectable = false
@@ -33,8 +33,8 @@ class ReportViewCell: UICollectionViewCell {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
-    
-    private let swiftReportView : UITextView = {
+
+    private let swiftReportView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .platinum
         tv.isSelectable = false
@@ -43,17 +43,17 @@ class ReportViewCell: UICollectionViewCell {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .black
         setupLayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setupLayout() {
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
@@ -74,25 +74,29 @@ class ReportViewCell: UICollectionViewCell {
             swiftReportView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
             swiftReportView.leadingAnchor.constraint(equalTo: objcReportView.trailingAnchor, constant: 1.5),
             swiftReportView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            swiftReportView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            swiftReportView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
-    
+
     private func updateViews() {
         guard let report = reportGroup else { return }
         titleLabel.text = report.title
         objcReportView.attributedText = extractFormattedText(report: report.objcReport)
         swiftReportView.attributedText = extractFormattedText(report: report.swiftReport)
     }
-    
-    private func extractFormattedText(report:Report) -> NSAttributedString {
+
+    private func extractFormattedText(report: Report) -> NSAttributedString {
         let elapsed = (report.time*1000).rounded(toDigits: 10)
         let ips = report.ips()
         let comparison = report.baselineComparison().rounded(toDigits: 2)
-        let attributedText = NSMutableAttributedString(string: "\(elapsed) [ms]", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)])
-        attributedText.append(NSAttributedString(string: "\n\(ips) [ips]", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]))
-        attributedText.append(NSAttributedString(string: "\n\(comparison)x", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: .bold)]))
+        let elapsedAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+        let attributedText = NSMutableAttributedString(string: "\(elapsed) [ms]", attributes: elapsedAttributes)
+
+        let ipsAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+        attributedText.append(NSAttributedString(string: "\n\(ips) [ips]", attributes: ipsAttributes))
+
+        let comparisonAttributs = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: .bold)]
+        attributedText.append(NSAttributedString(string: "\n\(comparison)x", attributes: comparisonAttributs))
         return attributedText
-        
     }
 }

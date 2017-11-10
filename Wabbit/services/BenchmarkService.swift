@@ -10,22 +10,22 @@ import Foundation
 
 class BenchmarkService {
     static let shared = BenchmarkService()
-    lazy var lipsum : String = {
+    lazy var lipsum: String = {
         guard let filepath = Bundle.main.path(forResource: "lipsum", ofType: "txt") else { return "lorem ipsum" }
         return (try? String(contentsOfFile: filepath)) ?? "lipsum"
     }()
 
-    lazy var logo : UIImage = {
+    lazy var logo: UIImage = {
         guard let filepath = Bundle.main.path(forResource: "logo1128", ofType: "png") else { return UIImage() }
         return UIImage(contentsOfFile: filepath) ?? UIImage()
     }()
 
-    lazy var json : String = {
+    lazy var json: String = {
         guard let filepath = Bundle.main.path(forResource: "countries", ofType: "json") else { return "[]" }
         return (try? String(contentsOfFile: filepath)) ?? "[]"
     }()
 
-    func run(onUpdate update: @escaping (([ReportGroup])->Void), completion: @escaping (()->Void)) {
+    func run(onUpdate update: @escaping (([ReportGroup]) -> Void), completion: @escaping (() -> Void)) {
         DispatchQueue.global(qos: .background).async {
             var reports = [ReportGroup]()
             update(reports)
@@ -67,7 +67,7 @@ class BenchmarkService {
         return ReportGroup.build("SHA1", objcMethod: {
             _ = NSCrypto.shared().sha1String(self.lipsum)
         }, swiftMethod: {
-            _ = Crypto.shared.sha1(string:self.lipsum)
+            _ = Crypto.shared.sha1(string: self.lipsum)
         })
     }
 
@@ -75,7 +75,7 @@ class BenchmarkService {
         return ReportGroup.build("SHA256", objcMethod: {
             _ = NSCrypto.shared().sha256String(self.lipsum)
         }, swiftMethod: {
-            _ = Crypto.shared.sha256(string:self.lipsum)
+            _ = Crypto.shared.sha256(string: self.lipsum)
         })
     }
 
@@ -83,7 +83,7 @@ class BenchmarkService {
         return ReportGroup.build("Base64 Text", objcMethod: {
             _ = NSCrypto.shared().base64String(self.lipsum)
         }, swiftMethod: {
-            _ = Crypto.shared.base64(string:self.lipsum)
+            _ = Crypto.shared.base64(string: self.lipsum)
         })
     }
 
@@ -91,7 +91,7 @@ class BenchmarkService {
         return ReportGroup.build("Base64 Image", objcMethod: {
             _ = NSCrypto.shared().base64Image(self.logo)
         }, swiftMethod: {
-            _ = Crypto.shared.base64(image:self.logo)
+            _ = Crypto.shared.base64(image: self.logo)
         })
     }
 

@@ -30,6 +30,11 @@ xcode-select --install
 
 # Available Actions
 ## iOS
+### ios lint
+```
+fastlane ios lint
+```
+
 ### ios test
 ```
 fastlane ios test

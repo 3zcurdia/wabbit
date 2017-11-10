@@ -11,7 +11,7 @@ import XCTest
 
 class BenchmarkTests: XCTestCase {
     let benchmark = Benchmark(times: 2, warmup: 1)
-    
+
     func testBMRun() {
         let result = benchmark.run("sleep") { sleep(1) }
         XCTAssertEqual("sleep", result.name)

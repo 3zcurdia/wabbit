@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Country : Codable {
-    let iso : String
-    let name : String
-    let languages : [String]
+struct Country: Codable {
+    let iso: String
+    let name: String
+    let languages: [String]
 }

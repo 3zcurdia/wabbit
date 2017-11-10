@@ -10,14 +10,14 @@ import UIKit
 
 class DeviceInfoView: UIView {
     private let devise = UIDevice.current
-    
-    private let container : UIView = {
+
+    private let container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    private let iphoneImageView : UIImageView = {
+
+    private let iphoneImageView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "iphone")!.withRenderingMode(.alwaysTemplate)
         iv.tintColor = .white
@@ -25,8 +25,8 @@ class DeviceInfoView: UIView {
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
-    
-    private let infoTextView : UITextView = {
+
+    private let infoTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.isSelectable = false
@@ -35,17 +35,17 @@ class DeviceInfoView: UIView {
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupLayout()
         loadInfo()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupLayout() {
         self.backgroundColor = UIColor.yankeesBlue
         addSubview(container)
@@ -70,11 +70,18 @@ class DeviceInfoView: UIView {
             infoTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
-    
+
     private func loadInfo() {
         let foregroundColor = UIColor.white
-        let attributedText = NSMutableAttributedString(string: "\(devise.modelName)", attributes: [NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26), NSAttributedStringKey.foregroundColor: foregroundColor])
-        attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)", attributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor]))
+        let deviseAttributes = [
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26),
+            NSAttributedStringKey.foregroundColor: foregroundColor
+        ]
+        let attributedText = NSMutableAttributedString(string: "\(devise.modelName)", attributes: deviseAttributes)
+        let systemAttributes = [
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor
+        ]
+        attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)", attributes: systemAttributes))
         infoTextView.attributedText = attributedText
     }
 }

@@ -9,11 +9,11 @@
 import Foundation
 
 class SwipeActionViewCell: UICollectionViewCell {
-    var text : String? {
+    var text: String? {
         didSet { self.updateText() }
     }
 
-    private let actionTextView : UITextView = {
+    private let actionTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.textColor = .white
@@ -45,7 +45,7 @@ class SwipeActionViewCell: UICollectionViewCell {
             ])
     }
 
-    private func updateText(){
+    private func updateText() {
         actionTextView.text = self.text
     }
 }

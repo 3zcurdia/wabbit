@@ -8,13 +8,13 @@
 
 import Foundation
 
-typealias VoidFuncClosure = (()->Void)
+typealias VoidFuncClosure = (() -> Void)
 
 struct ReportGroup {
-    let title : String
-    let objcReport : Report
-    let swiftReport : Report
-    
+    let title: String
+    let objcReport: Report
+    let swiftReport: Report
+
     static func build(_ titleName: String, objcMethod: @escaping VoidFuncClosure, swiftMethod: @escaping VoidFuncClosure) -> ReportGroup {
         var oReport = Benchmark.sharedSession.run("\(titleName) [ObjC]", block: objcMethod)
         var sReport = Benchmark.sharedSession.run("\(titleName) [Swift]", block: swiftMethod)

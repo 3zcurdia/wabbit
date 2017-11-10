@@ -11,13 +11,13 @@ import XCTest
 
 class NSNumericTests: XCTestCase {
     lazy var shared = NSNumeric.shared()!
-    
-    func testFactorial(){
+
+    func testFactorial() {
         XCTAssertEqual(6, shared.factorialLong(3))
         XCTAssertEqual(3628800, shared.factorialLong(10))
         XCTAssertEqual(479001600, shared.factorialLong(12))
     }
-    
+
     func testPrime() {
         XCTAssertFalse(shared.isPrimeLong(1))
         XCTAssertTrue(shared.isPrimeLong(3))
@@ -29,7 +29,7 @@ class NSNumericTests: XCTestCase {
         XCTAssertTrue(shared.isPrimeLong(64019))
         XCTAssertTrue(shared.isPrimeLong(104729))
     }
-    
+
     func testPrimePerformance() {
         self.measure {
             shared.isPrimeLong(104729)

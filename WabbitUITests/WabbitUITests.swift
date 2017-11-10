@@ -9,7 +9,7 @@
 import XCTest
 
 class WabbitUITests: XCTestCase {
-        
+
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
@@ -17,7 +17,7 @@ class WabbitUITests: XCTestCase {
         setupSnapshot(app)
         app.launch()
     }
-    
+
     func testRunBenchmarks() {
         snapshot("0-Launch")
         XCUIApplication().collectionViews.cells.children(matching: .textView).element.swipeDown()
@@ -26,5 +26,5 @@ class WabbitUITests: XCTestCase {
         XCUIDevice.shared.orientation = .landscapeRight
         snapshot("2-LandscapeLeft")
     }
-    
+
 }

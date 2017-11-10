@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     let infoView = DeviceInfoView()
     let reportView = ReportView()
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -25,8 +25,8 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    private func setupLayout(){
+
+    private func setupLayout() {
         infoView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(infoView)
         NSLayoutConstraint.activate([
@@ -51,4 +51,3 @@ class MainViewController: UIViewController {
         }, completion: nil)
     }
 }
-

@@ -11,9 +11,12 @@ import Foundation
 class JsonParse {
     static let shared = JsonParse()
     let decoder = JSONDecoder()
-    
-    func parseAllCountries(string:String) -> [Country] {
+
+    func parseAllCountries(string: String) -> [Country] {
         let data = string.data(using: .utf8)!
-        return try! decoder.decode([Country].self, from: data)
+        guard let countries = try? decoder.decode([Country].self, from: data) else {
+            return [Country(iso: "mx", name: "México", languages: ["es"])]
+        }
+        return countries
     }
 }
