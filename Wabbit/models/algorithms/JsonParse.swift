@@ -1,5 +1,5 @@
 //
-//  SWJsonParse.swift
+//  JsonParse.swift
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/6/17.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SWJsonParse {
-    static let shared = SWJsonParse()
+class JsonParse {
+    static let shared = JsonParse()
     let decoder = JSONDecoder()
     
     func parseAllCountries(string:String) -> [Country] {

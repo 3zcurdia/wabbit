@@ -1,5 +1,5 @@
 //
-//  OBJsonParse.h
+//  NSJsonParse.h
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/6/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OBJsonParse : NSObject
-+(id) shared;
+@interface NSJsonParse : NSObject
++(NSJsonParse *) shared;
 - (NSArray *) parseAllCountriesFrom: (NSData*)jsonData;
 @end

@@ -2,7 +2,7 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import "OBCrypto.h"
-#import "OBNumeric.h"
-#import "OBCountry.h"
-#import "OBJsonParse.h"
+#import "NSCrypto.h"
+#import "NSNumeric.h"
+#import "NSCountry.h"
+#import "NSJsonParse.h"

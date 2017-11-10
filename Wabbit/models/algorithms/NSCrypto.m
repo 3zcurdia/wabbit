@@ -1,22 +1,22 @@
 //
-//  OBChecksums.m
+//  NSCrypto.h
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/2/17.
 //  Copyright © 2017 Luis Ezcurdia. All rights reserved.
 //
 
-#import "OBCrypto.h"
+#import "NSCrypto.h"
 
-@implementation OBCrypto
+@implementation NSCrypto
 
-+ (id)shared {
-    static OBCrypto *sharedOBCrypto = nil;
++ (NSCrypto *)shared {
+    static NSCrypto *sharedNSCrypto = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedOBCrypto = [[self alloc] init];
+        sharedNSCrypto = [[self alloc] init];
     });
-    return sharedOBCrypto;
+    return sharedNSCrypto;
 }
 
 - (instancetype)init {

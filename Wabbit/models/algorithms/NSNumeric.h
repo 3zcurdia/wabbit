@@ -1,5 +1,5 @@
 //
-//  OBNumeric.h
+//  NSNumeric.h
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/2/17.
@@ -9,8 +9,8 @@
 #include "math.h"
 #import <Foundation/Foundation.h>
 
-@interface OBNumeric : NSObject
-+(id) shared;
+@interface NSNumeric : NSObject
++(NSNumeric *) shared;
 -(long) factorialLong: (long)input;
 -(BOOL) isPrimeLong: (long)input;
 @end

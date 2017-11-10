@@ -1,5 +1,5 @@
 //
-//  OBCountry.h
+//  NSCountry.h
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/7/17.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface OBCountry : NSObject
+@interface NSCountry : NSObject
 @property(nonatomic) NSString* iso;
 @property(nonatomic) NSString* name;
 @property(nonatomic) NSArray* languages;

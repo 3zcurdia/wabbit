@@ -75,54 +75,54 @@ class ReportView: UIView {
         DispatchQueue.global(qos: .background).async {
             self.reportGroups = []
             let primeGroup = ReportGroup.build("Prime", objcMethod: {
-                _ = (OBNumeric.shared() as! OBNumeric).isPrimeLong(181)
+                _ = NSNumeric.shared().isPrimeLong(181)
             }, swiftMethod: {
-                _ = SWNumeric.shared.isPrime(int: 181)
+                _ = Numeric.shared.isPrime(int: 181)
             })
             self.reportGroups?.append(primeGroup)
 
             let factGroup = ReportGroup.build("Factorial", objcMethod: {
-                _ = (OBNumeric.shared() as! OBNumeric).factorialLong(13)
+                _ = NSNumeric.shared().factorialLong(13)
             }, swiftMethod: {
-                _ = SWNumeric.shared.factorial(int: 13)
+                _ = Numeric.shared.factorial(int: 13)
             })
             self.reportGroups?.append(factGroup)
             
             let textTest = self.lipsum() ?? "lorem ipsum"
             let sha1Group = ReportGroup.build("SHA1", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).sha1String(textTest)
+                _ = NSCrypto.shared().sha1String(textTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.sha1(string:textTest)
+                _ = Crypto.shared.sha1(string:textTest)
             })
             self.reportGroups?.append(sha1Group)
 
             let sha256Group = ReportGroup.build("SHA256", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).sha256String(textTest)
+                _ = NSCrypto.shared().sha256String(textTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.sha256(string:textTest)
+                _ = Crypto.shared.sha256(string:textTest)
             })
             self.reportGroups?.append(sha256Group)
 
             let base64Group = ReportGroup.build("Base64 Text", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).base64String(textTest)
+                _ = NSCrypto.shared().base64String(textTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.base64(string:textTest)
+                _ = Crypto.shared.base64(string:textTest)
             })
             self.reportGroups?.append(base64Group)
             
             let imageTest = self.logoImage() ?? UIImage()
             let base64ImageGroup = ReportGroup.build("Base64 Image", objcMethod: {
-                _ = (OBCrypto.shared() as! OBCrypto).base64Image(imageTest)
+                _ = NSCrypto.shared().base64Image(imageTest)
             }, swiftMethod: {
-                _ = SWCrypto.shared.base64(image:imageTest)
+                _ = Crypto.shared.base64(image:imageTest)
             })
             self.reportGroups?.append(base64ImageGroup)
             
             let jsonTest = self.jsonFile() ?? "[]"
             let jsonGroup = ReportGroup.build("Decode JSON", objcMethod: {
-                _ = (OBJsonParse.shared() as! OBJsonParse).parseAllCountries(from: jsonTest.data(using: .utf8))
+                _ = NSJsonParse.shared().parseAllCountries(from: jsonTest.data(using: .utf8))
             }, swiftMethod: {
-                _ = SWJsonParse.shared.parseAllCountries(string: jsonTest)
+                _ = JsonParse.shared.parseAllCountries(string: jsonTest)
             })
             self.reportGroups?.append(jsonGroup)
             

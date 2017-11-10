@@ -1,14 +1,14 @@
 //
-//  OBCountry.m
+//  NSCountry.m
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/7/17.
 //  Copyright © 2017 Luis Ezcurdia. All rights reserved.
 //
 
-#import "OBCountry.h"
+#import "NSCountry.h"
 
-@implementation OBCountry
+@implementation NSCountry
 
 - (instancetype)initWithISO: (NSString*)iso name: (NSString*)name languanges: (NSArray*)langs
 {

@@ -12,6 +12,8 @@
 		30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */; };
 		30130E541FAE229100370EAC /* lipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30130E531FAE229100370EAC /* lipsum.txt */; };
 		30130E581FAE414800370EAC /* logo128.png in Resources */ = {isa = PBXBuildFile; fileRef = 30130E571FAE414800370EAC /* logo128.png */; };
+		301A19E41FB61BBB00352332 /* BenchmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A19E31FB61BBB00352332 /* BenchmarkService.swift */; };
+		301A19E61FB621A900352332 /* SwipeActionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A19E51FB621A800352332 /* SwipeActionViewCell.swift */; };
 		3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD981FAAD7D300E401C4 /* AppDelegate.swift */; };
 		3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */; };
 		3038CDA01FAAD7D300E401C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3038CD9F1FAAD7D300E401C4 /* Assets.xcassets */; };
@@ -20,30 +22,25 @@
 		3038CDB91FAAD7D300E401C4 /* WabbitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDB81FAAD7D300E401C4 /* WabbitUITests.swift */; };
 		3038CDCA1FAAE38100E401C4 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDC91FAAE38100E401C4 /* Report.swift */; };
 		3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCB1FAAE39800E401C4 /* Benchmark.swift */; };
-		3038CDD01FAAEA8600E401C4 /* SWCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */; };
-		3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD31FAAED6700E401C4 /* OBCrypto.m */; };
-		3038CDDA1FAAF02000E401C4 /* SWCryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */; };
-		3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */; };
-		3038CDDE1FAAF62300E401C4 /* SWNumericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */; };
+		3038CDD01FAAEA8600E401C4 /* Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDCF1FAAEA8600E401C4 /* Crypto.swift */; };
+		3038CDD41FAAED6700E401C4 /* NSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD31FAAED6700E401C4 /* NSCrypto.m */; };
+		3038CDDA1FAAF02000E401C4 /* CryptoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDD91FAAF02000E401C4 /* CryptoTests.swift */; };
+		3038CDDC1FAAF45000E401C4 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDB1FAAF45000E401C4 /* Numeric.swift */; };
+		3038CDDE1FAAF62300E401C4 /* NumericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDD1FAAF62300E401C4 /* NumericTests.swift */; };
 		3038CDE21FAB055000E401C4 /* BenchmarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDE11FAB055000E401C4 /* BenchmarkTests.swift */; };
-		3038CDE41FAB875100E401C4 /* OBCryptoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDE31FAB875100E401C4 /* OBCryptoTest.swift */; };
 		3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */; };
-		3047EDBB1FAC108700BAE236 /* BooleanSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBA1FAC108700BAE236 /* BooleanSettingView.swift */; };
 		3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBC1FAC168300BAE236 /* LanguagesView.swift */; };
 		3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */; };
 		3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDC01FACD94300BAE236 /* ReportView.swift */; };
 		30ABE1961FB174210014082D /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 30ABE1951FB174200014082D /* countries.json */; };
 		30ABE1991FB174740014082D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1981FB174740014082D /* Country.swift */; };
-		30ABE19B1FB175240014082D /* SWJsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19A1FB175240014082D /* SWJsonParseTests.swift */; };
-		30ABE19D1FB177630014082D /* SWJsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19C1FB177630014082D /* SWJsonParse.swift */; };
-		30ABE1A21FB17D050014082D /* OBJsonParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A11FB17D050014082D /* OBJsonParse.m */; };
-		30ABE1A51FB218130014082D /* OBCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A41FB218130014082D /* OBCountry.m */; };
-		30ABE1A71FB222090014082D /* OBJsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A61FB222090014082D /* OBJsonParseTests.swift */; };
+		30ABE19B1FB175240014082D /* JsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19A1FB175240014082D /* JsonParseTests.swift */; };
+		30ABE19D1FB177630014082D /* JsonParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19C1FB177630014082D /* JsonParse.swift */; };
+		30ABE1A21FB17D050014082D /* NSJsonParse.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A11FB17D050014082D /* NSJsonParse.m */; };
+		30ABE1A51FB218130014082D /* NSCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A41FB218130014082D /* NSCountry.m */; };
 		30ABE1AA1FB271E50014082D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A81FB271DE0014082D /* SnapshotHelper.swift */; };
-		30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* OBNumeric.m */; };
-		30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */; };
+		30B2C4691FAB8D8100A4B683 /* NSNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* NSNumeric.m */; };
 		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
-		30C6C0A41FAEEC90007C06D5 /* SwipeActionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */; };
 		C9F38B71259013E9C237B171 /* Pods_Wabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD894B927E45DB96151B721E /* Pods_Wabbit.framework */; };
 		F90F6A2931E3262789698DE6 /* Pods_WabbitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980F380D34D80490057FD411 /* Pods_WabbitUITests.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +67,8 @@
 		30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGroup.swift; sourceTree = "<group>"; };
 		30130E531FAE229100370EAC /* lipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = lipsum.txt; sourceTree = "<group>"; };
 		30130E571FAE414800370EAC /* logo128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo128.png; sourceTree = "<group>"; };
+		301A19E31FB61BBB00352332 /* BenchmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkService.swift; sourceTree = "<group>"; };
+		301A19E51FB621A800352332 /* SwipeActionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionViewCell.swift; sourceTree = "<group>"; };
 		3038CD951FAAD7D300E401C4 /* Wabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3038CD981FAAD7D300E401C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -84,35 +83,30 @@
 		3038CDBA1FAAD7D300E401C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3038CDC91FAAE38100E401C4 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		3038CDCB1FAAE39800E401C4 /* Benchmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Benchmark.swift; sourceTree = "<group>"; };
-		3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCrypto.swift; sourceTree = "<group>"; };
-		3038CDD11FAAED4600E401C4 /* OBCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCrypto.h; sourceTree = "<group>"; };
+		3038CDCF1FAAEA8600E401C4 /* Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto.swift; sourceTree = "<group>"; };
+		3038CDD11FAAED4600E401C4 /* NSCrypto.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCrypto.h; sourceTree = "<group>"; };
 		3038CDD21FAAED6600E401C4 /* Wabbit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wabbit-Bridging-Header.h"; sourceTree = "<group>"; };
-		3038CDD31FAAED6700E401C4 /* OBCrypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCrypto.m; sourceTree = "<group>"; };
-		3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCryptoTests.swift; sourceTree = "<group>"; };
-		3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumeric.swift; sourceTree = "<group>"; };
-		3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWNumericTests.swift; sourceTree = "<group>"; };
+		3038CDD31FAAED6700E401C4 /* NSCrypto.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCrypto.m; sourceTree = "<group>"; };
+		3038CDD91FAAF02000E401C4 /* CryptoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTests.swift; sourceTree = "<group>"; };
+		3038CDDB1FAAF45000E401C4 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
+		3038CDDD1FAAF62300E401C4 /* NumericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTests.swift; sourceTree = "<group>"; };
 		3038CDE11FAB055000E401C4 /* BenchmarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkTests.swift; sourceTree = "<group>"; };
-		3038CDE31FAB875100E401C4 /* OBCryptoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBCryptoTest.swift; sourceTree = "<group>"; };
 		3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
-		3047EDBA1FAC108700BAE236 /* BooleanSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanSettingView.swift; sourceTree = "<group>"; };
 		3047EDBC1FAC168300BAE236 /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
 		3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		3047EDC01FACD94300BAE236 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		30ABE1951FB174200014082D /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		30ABE1981FB174740014082D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		30ABE19A1FB175240014082D /* SWJsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWJsonParseTests.swift; sourceTree = "<group>"; };
-		30ABE19C1FB177630014082D /* SWJsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWJsonParse.swift; sourceTree = "<group>"; };
-		30ABE1A01FB17D050014082D /* OBJsonParse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJsonParse.h; sourceTree = "<group>"; };
-		30ABE1A11FB17D050014082D /* OBJsonParse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJsonParse.m; sourceTree = "<group>"; };
-		30ABE1A31FB218130014082D /* OBCountry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBCountry.h; sourceTree = "<group>"; };
-		30ABE1A41FB218130014082D /* OBCountry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBCountry.m; sourceTree = "<group>"; };
-		30ABE1A61FB222090014082D /* OBJsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBJsonParseTests.swift; sourceTree = "<group>"; };
+		30ABE19A1FB175240014082D /* JsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParseTests.swift; sourceTree = "<group>"; };
+		30ABE19C1FB177630014082D /* JsonParse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParse.swift; sourceTree = "<group>"; };
+		30ABE1A01FB17D050014082D /* NSJsonParse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSJsonParse.h; sourceTree = "<group>"; };
+		30ABE1A11FB17D050014082D /* NSJsonParse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSJsonParse.m; sourceTree = "<group>"; };
+		30ABE1A31FB218130014082D /* NSCountry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCountry.h; sourceTree = "<group>"; };
+		30ABE1A41FB218130014082D /* NSCountry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSCountry.m; sourceTree = "<group>"; };
 		30ABE1A81FB271DE0014082D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		30B2C4671FAB8D8100A4B683 /* OBNumeric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBNumeric.h; sourceTree = "<group>"; };
-		30B2C4681FAB8D8100A4B683 /* OBNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBNumeric.m; sourceTree = "<group>"; };
-		30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OBNumericTest.swift; sourceTree = "<group>"; };
+		30B2C4671FAB8D8100A4B683 /* NSNumeric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSNumeric.h; sourceTree = "<group>"; };
+		30B2C4681FAB8D8100A4B683 /* NSNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSNumeric.m; sourceTree = "<group>"; };
 		30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
-		30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionViewCell.swift; sourceTree = "<group>"; };
 		481BA205AA4D811F6070ED71 /* Pods-Wabbit.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.adhoc.xcconfig"; sourceTree = "<group>"; };
 		62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WabbitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768CD3E0E6117D085B287607 /* Pods-Wabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +165,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		301A19E21FB61B9D00352332 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				301A19E31FB61BBB00352332 /* BenchmarkService.swift */,
+			);
+			path = services;
+			sourceTree = "<group>";
+		};
 		3038CD8C1FAAD7D300E401C4 = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +198,7 @@
 		3038CD971FAAD7D300E401C4 /* Wabbit */ = {
 			isa = PBXGroup;
 			children = (
+				301A19E21FB61B9D00352332 /* services */,
 				3038CDC81FAAE28C00E401C4 /* models */,
 				3038CDC71FAAE27B00E401C4 /* controllers */,
 				3038CDC61FAAE26F00E401C4 /* views */,
@@ -235,11 +238,10 @@
 			isa = PBXGroup;
 			children = (
 				30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */,
-				3047EDBA1FAC108700BAE236 /* BooleanSettingView.swift */,
 				3047EDBC1FAC168300BAE236 /* LanguagesView.swift */,
 				3047EDC01FACD94300BAE236 /* ReportView.swift */,
 				30130E4A1FAD551600370EAC /* ReportViewCell.swift */,
-				30C6C0A31FAEEC90007C06D5 /* SwipeActionViewCell.swift */,
+				301A19E51FB621A800352332 /* SwipeActionViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -277,15 +279,15 @@
 		3038CDCE1FAAEA4600E401C4 /* algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				3038CDCF1FAAEA8600E401C4 /* SWCrypto.swift */,
-				3038CDDB1FAAF45000E401C4 /* SWNumeric.swift */,
-				30ABE19C1FB177630014082D /* SWJsonParse.swift */,
-				3038CDD11FAAED4600E401C4 /* OBCrypto.h */,
-				3038CDD31FAAED6700E401C4 /* OBCrypto.m */,
-				30B2C4671FAB8D8100A4B683 /* OBNumeric.h */,
-				30B2C4681FAB8D8100A4B683 /* OBNumeric.m */,
-				30ABE1A01FB17D050014082D /* OBJsonParse.h */,
-				30ABE1A11FB17D050014082D /* OBJsonParse.m */,
+				3038CDCF1FAAEA8600E401C4 /* Crypto.swift */,
+				3038CDDB1FAAF45000E401C4 /* Numeric.swift */,
+				30ABE19C1FB177630014082D /* JsonParse.swift */,
+				3038CDD11FAAED4600E401C4 /* NSCrypto.h */,
+				3038CDD31FAAED6700E401C4 /* NSCrypto.m */,
+				30B2C4671FAB8D8100A4B683 /* NSNumeric.h */,
+				30B2C4681FAB8D8100A4B683 /* NSNumeric.m */,
+				30ABE1A01FB17D050014082D /* NSJsonParse.h */,
+				30ABE1A11FB17D050014082D /* NSJsonParse.m */,
 				3038CDD21FAAED6600E401C4 /* Wabbit-Bridging-Header.h */,
 			);
 			path = algorithms;
@@ -294,12 +296,9 @@
 		3038CDD81FAAF00E00E401C4 /* algorithms */ = {
 			isa = PBXGroup;
 			children = (
-				3038CDD91FAAF02000E401C4 /* SWCryptoTests.swift */,
-				3038CDDD1FAAF62300E401C4 /* SWNumericTests.swift */,
-				30ABE19A1FB175240014082D /* SWJsonParseTests.swift */,
-				3038CDE31FAB875100E401C4 /* OBCryptoTest.swift */,
-				30B2C46A1FAB941100A4B683 /* OBNumericTest.swift */,
-				30ABE1A61FB222090014082D /* OBJsonParseTests.swift */,
+				3038CDD91FAAF02000E401C4 /* CryptoTests.swift */,
+				3038CDDD1FAAF62300E401C4 /* NumericTests.swift */,
+				30ABE19A1FB175240014082D /* JsonParseTests.swift */,
 			);
 			path = algorithms;
 			sourceTree = "<group>";
@@ -308,8 +307,8 @@
 			isa = PBXGroup;
 			children = (
 				30ABE1981FB174740014082D /* Country.swift */,
-				30ABE1A31FB218130014082D /* OBCountry.h */,
-				30ABE1A41FB218130014082D /* OBCountry.m */,
+				30ABE1A31FB218130014082D /* NSCountry.h */,
+				30ABE1A41FB218130014082D /* NSCountry.m */,
 			);
 			path = jsonparse;
 			sourceTree = "<group>";
@@ -620,26 +619,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30ABE19D1FB177630014082D /* SWJsonParse.swift in Sources */,
+				30ABE19D1FB177630014082D /* JsonParse.swift in Sources */,
 				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
 				30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */,
 				3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */,
-				3038CDDC1FAAF45000E401C4 /* SWNumeric.swift in Sources */,
+				3038CDDC1FAAF45000E401C4 /* Numeric.swift in Sources */,
 				3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */,
-				30ABE1A21FB17D050014082D /* OBJsonParse.m in Sources */,
+				30ABE1A21FB17D050014082D /* NSJsonParse.m in Sources */,
 				30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */,
 				30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */,
-				30C6C0A41FAEEC90007C06D5 /* SwipeActionViewCell.swift in Sources */,
-				30ABE1A51FB218130014082D /* OBCountry.m in Sources */,
+				301A19E41FB61BBB00352332 /* BenchmarkService.swift in Sources */,
+				30ABE1A51FB218130014082D /* NSCountry.m in Sources */,
+				301A19E61FB621A900352332 /* SwipeActionViewCell.swift in Sources */,
 				3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */,
 				3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */,
 				30ABE1991FB174740014082D /* Country.swift in Sources */,
 				3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */,
 				3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */,
-				3038CDD41FAAED6700E401C4 /* OBCrypto.m in Sources */,
-				3047EDBB1FAC108700BAE236 /* BooleanSettingView.swift in Sources */,
-				30B2C4691FAB8D8100A4B683 /* OBNumeric.m in Sources */,
-				3038CDD01FAAEA8600E401C4 /* SWCrypto.swift in Sources */,
+				3038CDD41FAAED6700E401C4 /* NSCrypto.m in Sources */,
+				30B2C4691FAB8D8100A4B683 /* NSNumeric.m in Sources */,
+				3038CDD01FAAEA8600E401C4 /* Crypto.swift in Sources */,
 				3038CDCA1FAAE38100E401C4 /* Report.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,14 +647,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3038CDDA1FAAF02000E401C4 /* SWCryptoTests.swift in Sources */,
-				30ABE19B1FB175240014082D /* SWJsonParseTests.swift in Sources */,
-				30ABE1A71FB222090014082D /* OBJsonParseTests.swift in Sources */,
+				3038CDDA1FAAF02000E401C4 /* CryptoTests.swift in Sources */,
+				30ABE19B1FB175240014082D /* JsonParseTests.swift in Sources */,
 				3038CDE21FAB055000E401C4 /* BenchmarkTests.swift in Sources */,
-				30B2C46B1FAB941100A4B683 /* OBNumericTest.swift in Sources */,
-				3038CDDE1FAAF62300E401C4 /* SWNumericTests.swift in Sources */,
+				3038CDDE1FAAF62300E401C4 /* NumericTests.swift in Sources */,
 				3038CDAE1FAAD7D300E401C4 /* ReportTests.swift in Sources */,
-				3038CDE41FAB875100E401C4 /* OBCryptoTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

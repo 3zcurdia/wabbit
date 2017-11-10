@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class SWCrypto {
-    static let shared = SWCrypto()
+class Crypto {
+    static let shared = Crypto()
     
     func sha1(string:String) -> String {
         let data = string.data(using: String.Encoding.utf8)!

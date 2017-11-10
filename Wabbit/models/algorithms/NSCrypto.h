@@ -6,18 +6,18 @@
 //  Copyright © 2017 Luis Ezcurdia. All rights reserved.
 //
 
-#ifndef OBCrypto_h
-#define OBCrypto_h
+#ifndef NSCrypto_h
+#define NSCrypto_h
 #import <CommonCrypto/CommonDigest.h>
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface OBCrypto : NSObject
-+(id) shared;
+@interface NSCrypto : NSObject
++(NSCrypto *) shared;
 -(NSString *) sha1String: (NSString *)input;
 -(NSString *) sha256String: (NSString *)input;
 -(NSString *) base64String: (NSString *)input;
 -(NSString *) base64Image:(UIImage *)input;
 @end
 
-#endif /* OBCrypto_h */
+#endif /* NSCrypto_h */

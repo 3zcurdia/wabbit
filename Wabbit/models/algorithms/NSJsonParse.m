@@ -1,22 +1,22 @@
 //
-//  OBJsonParse.m
+//  NSJsonParse.m
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/6/17.
 //  Copyright © 2017 Luis Ezcurdia. All rights reserved.
 //
 
-#import "OBCountry.h"
-#import "OBJsonParse.h"
+#import "NSCountry.h"
+#import "NSJsonParse.h"
 
-@implementation OBJsonParse
-+(id) shared {
-    static OBJsonParse *sharedOBJsonParse = nil;
+@implementation NSJsonParse
++(NSJsonParse* ) shared {
+    static NSJsonParse *sharedNSJsonParse = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedOBJsonParse = [[self alloc] init];
+        sharedNSJsonParse = [[self alloc] init];
     });
-    return sharedOBJsonParse;
+    return sharedNSJsonParse;
 }
 
 - (instancetype)init {
@@ -33,7 +33,7 @@
         if ([object isKindOfClass:[NSDictionary class]])
         {
             NSDictionary* dict = object;
-            OBCountry* country = [[OBCountry alloc] initWithISO:dict[@"iso"] name:dict[@"name"] languanges:dict[@"languages"]];
+            NSCountry* country = [[NSCountry alloc] initWithISO:dict[@"iso"] name:dict[@"name"] languanges:dict[@"languages"]];
             [out addObject:country];
         }
     }

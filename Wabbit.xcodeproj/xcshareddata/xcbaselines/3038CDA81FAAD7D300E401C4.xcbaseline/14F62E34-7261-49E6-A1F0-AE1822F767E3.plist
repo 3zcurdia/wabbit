@@ -4,7 +4,7 @@
 <dict>
 	<key>classNames</key>
 	<dict>
-		<key>SWNumericTest</key>
+		<key>NumericTest</key>
 		<dict>
 			<key>testPrime()</key>
 			<dict>

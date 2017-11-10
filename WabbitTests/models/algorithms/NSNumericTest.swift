@@ -1,5 +1,5 @@
 //
-//  OBNumericTest.swift
+//  NSNumericTest.swift
 //  WabbitTests
 //
 //  Created by Luis Ezcurdia on 11/2/17.
@@ -9,8 +9,8 @@
 import XCTest
 @testable import Wabbit
 
-class OBNumericTests: XCTestCase {
-    lazy var shared = OBNumeric.shared() as! OBNumeric
+class NSNumericTests: XCTestCase {
+    lazy var shared = NSNumeric.shared()!
     
     func testFactorial(){
         XCTAssertEqual(6, shared.factorialLong(3))

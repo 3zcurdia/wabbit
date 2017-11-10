@@ -1,5 +1,5 @@
 //
-//  SWNumeric.swift
+//  Numeric.swift
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/2/17.
@@ -8,8 +8,8 @@
 
 import Foundation
 
-class SWNumeric {
-    static let shared = SWNumeric()
+class Numeric {
+    static let shared = Numeric()
     
     func factorial(int number:Int64) -> Int64 {
         if number < 1 {

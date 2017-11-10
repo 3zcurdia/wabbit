@@ -1,21 +1,21 @@
 //
-//  OBNumeric.m
+//  NSNumeric.m
 //  Wabbit
 //
 //  Created by Luis Ezcurdia on 11/2/17.
 //  Copyright © 2017 Luis Ezcurdia. All rights reserved.
 //
 
-#import "OBNumeric.h"
+#import "NSNumeric.h"
 
-@implementation OBNumeric
-+(id) shared {
-    static OBNumeric *sharedOBNumeric = nil;
+@implementation NSNumeric
++(NSNumeric *) shared {
+    static NSNumeric *sharedNSNumeric = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedOBNumeric = [[self alloc] init];
+        sharedNSNumeric = [[self alloc] init];
     });
-    return sharedOBNumeric;
+    return sharedNSNumeric;
 }
 
 - (instancetype)init {
