@@ -66,85 +66,11 @@ class ReportView: UIView {
     
     @objc func refreshBenchmarks() {
         reportsCollection.refreshControl?.beginRefreshing()
-        runBenchmarks {
+        BenchmarkService.shared.run(onUpdate: { reports in
+            self.reportGroups = reports
+        }, completion: {
             self.reportsCollection.refreshControl?.endRefreshing()
-        }
-    }
-    
-    private func runBenchmarks(completion: @escaping (()->Void)) {
-        DispatchQueue.global(qos: .background).async {
-            self.reportGroups = []
-            let primeGroup = ReportGroup.build("Prime", objcMethod: {
-                _ = NSNumeric.shared().isPrimeLong(181)
-            }, swiftMethod: {
-                _ = Numeric.shared.isPrime(int: 181)
-            })
-            self.reportGroups?.append(primeGroup)
-
-            let factGroup = ReportGroup.build("Factorial", objcMethod: {
-                _ = NSNumeric.shared().factorialLong(13)
-            }, swiftMethod: {
-                _ = Numeric.shared.factorial(int: 13)
-            })
-            self.reportGroups?.append(factGroup)
-            
-            let textTest = self.lipsum() ?? "lorem ipsum"
-            let sha1Group = ReportGroup.build("SHA1", objcMethod: {
-                _ = NSCrypto.shared().sha1String(textTest)
-            }, swiftMethod: {
-                _ = Crypto.shared.sha1(string:textTest)
-            })
-            self.reportGroups?.append(sha1Group)
-
-            let sha256Group = ReportGroup.build("SHA256", objcMethod: {
-                _ = NSCrypto.shared().sha256String(textTest)
-            }, swiftMethod: {
-                _ = Crypto.shared.sha256(string:textTest)
-            })
-            self.reportGroups?.append(sha256Group)
-
-            let base64Group = ReportGroup.build("Base64 Text", objcMethod: {
-                _ = NSCrypto.shared().base64String(textTest)
-            }, swiftMethod: {
-                _ = Crypto.shared.base64(string:textTest)
-            })
-            self.reportGroups?.append(base64Group)
-            
-            let imageTest = self.logoImage() ?? UIImage()
-            let base64ImageGroup = ReportGroup.build("Base64 Image", objcMethod: {
-                _ = NSCrypto.shared().base64Image(imageTest)
-            }, swiftMethod: {
-                _ = Crypto.shared.base64(image:imageTest)
-            })
-            self.reportGroups?.append(base64ImageGroup)
-            
-            let jsonTest = self.jsonFile() ?? "[]"
-            let jsonGroup = ReportGroup.build("Decode JSON", objcMethod: {
-                _ = NSJsonParse.shared().parseAllCountries(from: jsonTest.data(using: .utf8))
-            }, swiftMethod: {
-                _ = JsonParse.shared.parseAllCountries(string: jsonTest)
-            })
-            self.reportGroups?.append(jsonGroup)
-            
-            DispatchQueue.main.async {
-                completion()
-            }
-        }
-    }
-    
-    private func lipsum() -> String? {
-        guard let filepath = Bundle.main.path(forResource: "lipsum", ofType: "txt") else { return nil }
-        return try? String(contentsOfFile: filepath)
-    }
-    
-    private func logoImage() -> UIImage? {
-        guard let filepath = Bundle.main.path(forResource: "logo1128", ofType: "png") else { return nil }
-        return UIImage(contentsOfFile: filepath)
-    }
-    
-    private func jsonFile() -> String? {
-        guard let filepath = Bundle.main.path(forResource: "countries", ofType: "json") else { return nil }
-        return try? String(contentsOfFile: filepath)
+        })
     }
 }
 
