@@ -9,6 +9,9 @@
 import UIKit
 
 class DeviceInfoView: UIView {
+    var elapsedTime: Double? {
+        didSet { updateTime() }
+    }
     private let devise = UIDevice.current
 
     private let container: UIView = {
@@ -17,9 +20,13 @@ class DeviceInfoView: UIView {
         return view
     }()
 
-    private let iphoneImageView: UIImageView = {
+    private lazy var iphoneImageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(named: "iphone")!.withRenderingMode(.alwaysTemplate)
+        if devise.modelName == "iPhone X" {
+            iv.image = UIImage(named: "iphoneX")!.withRenderingMode(.alwaysTemplate)
+        } else {
+            iv.image = UIImage(named: "iphone")!.withRenderingMode(.alwaysTemplate)
+        }
         iv.tintColor = .white
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +34,16 @@ class DeviceInfoView: UIView {
     }()
 
     private let infoTextView: UITextView = {
+        let tv = UITextView()
+        tv.backgroundColor = .clear
+        tv.isSelectable = false
+        tv.isEditable = false
+        tv.isScrollEnabled = false
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+
+    private let elapsedTimeTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.isSelectable = false
@@ -51,7 +68,7 @@ class DeviceInfoView: UIView {
         addSubview(container)
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor),
-            container.leadingAnchor.constraint(equalTo: leadingAnchor),
+            container.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
             container.bottomAnchor.constraint(equalTo: bottomAnchor),
             container.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25)
             ])
@@ -66,8 +83,15 @@ class DeviceInfoView: UIView {
         NSLayoutConstraint.activate([
             infoTextView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             infoTextView.leadingAnchor.constraint(equalTo: container.trailingAnchor),
-            infoTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            infoTextView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
             infoTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+        addSubview(elapsedTimeTextView)
+        NSLayoutConstraint.activate([
+            elapsedTimeTextView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            elapsedTimeTextView.leadingAnchor.constraint(equalTo: infoTextView.trailingAnchor),
+            elapsedTimeTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            elapsedTimeTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
 
@@ -81,7 +105,18 @@ class DeviceInfoView: UIView {
         let systemAttributes = [
             NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor
         ]
-        attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)", attributes: systemAttributes))
+        attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)\nSwift 4.0", attributes: systemAttributes))
         infoTextView.attributedText = attributedText
+    }
+
+    private func updateTime() {
+        guard let time = elapsedTime else { return }
+        let elapsedAttributes = [
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedStringKey.foregroundColor: UIColor.white
+        ]
+        let attributedText = NSMutableAttributedString(string: "\(time.rounded(toDigits: 5) ) [s] ", attributes: elapsedAttributes)
+        elapsedTimeTextView.attributedText = attributedText
+        elapsedTimeTextView.textAlignment = .right
     }
 }

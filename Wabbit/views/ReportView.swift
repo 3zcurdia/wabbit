@@ -11,6 +11,11 @@ import UIKit
 class ReportView: UIView {
     let reportCellId = "reportCell"
     let actionCellId = "actionCell"
+    let infoView: DeviceInfoView = {
+        let dv = DeviceInfoView()
+        dv.translatesAutoresizingMaskIntoConstraints = false
+        return dv
+    }()
     let langView: LanguagesView = {
         let lv = LanguagesView()
         lv.translatesAutoresizingMaskIntoConstraints = false
@@ -48,9 +53,16 @@ class ReportView: UIView {
     }
 
     private func setupLayout() {
+        addSubview(infoView)
+        NSLayoutConstraint.activate([
+            infoView.topAnchor.constraint(equalTo: topAnchor),
+            infoView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            infoView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            infoView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.14)
+            ])
         addSubview(langView)
         NSLayoutConstraint.activate([
-            langView.topAnchor.constraint(equalTo: topAnchor),
+            langView.topAnchor.constraint(equalTo: infoView.bottomAnchor),
             langView.leadingAnchor.constraint(equalTo: leadingAnchor),
             langView.trailingAnchor.constraint(equalTo: trailingAnchor),
             langView.heightAnchor.constraint(equalToConstant: 44)
@@ -66,9 +78,11 @@ class ReportView: UIView {
 
     @objc func refreshBenchmarks() {
         reportsCollection.refreshControl?.beginRefreshing()
+        let startTime = Date()
         BenchmarkService.shared.run(onUpdate: { reports in
             self.reportGroups = reports
         }, completion: {
+            self.infoView.elapsedTime = Date().timeIntervalSince(startTime)
             self.reportsCollection.refreshControl?.endRefreshing()
         })
     }

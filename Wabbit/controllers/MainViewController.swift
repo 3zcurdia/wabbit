@@ -9,8 +9,17 @@
 import UIKit
 
 class MainViewController: UIViewController {
-    let infoView = DeviceInfoView()
-    let reportView = ReportView()
+    let topView: UIView = {
+        let tv = UIView()
+        tv.backgroundColor = .yankeesBlue
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        return tv
+    }()
+    let reportView: ReportView = {
+        let rv = ReportView()
+        rv.translatesAutoresizingMaskIntoConstraints = false
+        return rv
+    }()
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -27,18 +36,16 @@ class MainViewController: UIViewController {
     }
 
     private func setupLayout() {
-        infoView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(infoView)
+        view.addSubview(topView)
         NSLayoutConstraint.activate([
-            infoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            infoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            infoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            infoView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.14)
+            topView.topAnchor.constraint(equalTo: view.topAnchor),
+            topView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
             ])
-        reportView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(reportView)
         NSLayoutConstraint.activate([
-            reportView.topAnchor.constraint(equalTo: infoView.bottomAnchor),
+            reportView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             reportView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             reportView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             reportView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
