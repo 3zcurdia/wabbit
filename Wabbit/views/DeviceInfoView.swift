@@ -83,7 +83,7 @@ class DeviceInfoView: UIView {
         NSLayoutConstraint.activate([
             infoTextView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             infoTextView.leadingAnchor.constraint(equalTo: container.trailingAnchor),
-            infoTextView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
+            infoTextView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.4),
             infoTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
         addSubview(elapsedTimeTextView)
@@ -115,7 +115,7 @@ class DeviceInfoView: UIView {
             NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
             NSAttributedStringKey.foregroundColor: UIColor.white
         ]
-        let attributedText = NSMutableAttributedString(string: "\(time.rounded(toDigits: 5) ) [s] ", attributes: elapsedAttributes)
+        let attributedText = NSMutableAttributedString(string: "Elapsed time: \(time.rounded(toDigits: 5) ) [s]", attributes: elapsedAttributes)
         elapsedTimeTextView.attributedText = attributedText
         elapsedTimeTextView.textAlignment = .right
     }
