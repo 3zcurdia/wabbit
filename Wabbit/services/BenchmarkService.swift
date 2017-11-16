@@ -106,7 +106,7 @@ class BenchmarkService {
             _ = JsonParse.shared.parseAllCountries(string: self.json)
         })
     }
-    
+
     func charReplacementGroup() -> ReportGroup {
         return ReportGroup.build("Character Replacement", objcMethod: {
             _ = NSStringManipulation.shared().textWithNumbers(for: self.lipsum)
@@ -114,7 +114,7 @@ class BenchmarkService {
             _ = StringManipulation.shared.textWithNumbers(self.lipsum)
         })
     }
-    
+
     func matchGroup() -> ReportGroup {
         return ReportGroup.build("Regex Match", objcMethod: {
             _ = NSStringManipulation.shared().matches(for: "i\\D", in: self.lipsum)

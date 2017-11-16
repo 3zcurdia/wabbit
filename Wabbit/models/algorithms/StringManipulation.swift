@@ -10,7 +10,7 @@ import Foundation
 
 class StringManipulation {
     static let shared = StringManipulation()
-    
+
     func textWithNumbers(_ str: String) -> String {
         var out = str.replacingOccurrences(of: "o", with: "0")
         out = out.replacingOccurrences(of: "i", with: "1")
@@ -24,12 +24,12 @@ class StringManipulation {
         out = out.replacingOccurrences(of: "g", with: "9")
         return out
     }
-    
+
     func matches(for regex: String, in text: String) -> [String] {
         do {
             let regex = try NSRegularExpression(pattern: regex)
             let results = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
-            return results.map { 
+            return results.map {
                 String(text[Range($0.range, in: text)!])
             }
         } catch let error {
