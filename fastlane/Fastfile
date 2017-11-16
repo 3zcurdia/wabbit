@@ -28,12 +28,13 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan
+    scan(scheme: 'Wabbit')
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    swiftlint(mode: :autocorrect, ignore_exit_status: true)
     ensure_git_status_clean
     increment_build_number
     commit_version_bump
