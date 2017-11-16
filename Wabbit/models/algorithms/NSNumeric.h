@@ -13,4 +13,5 @@
 +(NSNumeric *) shared;
 -(long) factorialLong: (long)input;
 -(BOOL) isPrimeLong: (long)input;
+-(long)fibonacci:(long)position;
 @end

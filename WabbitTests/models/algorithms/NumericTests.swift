@@ -43,7 +43,17 @@ class NumericTests: XCTestCase {
         XCTAssertTrue(nsshared.isPrimeLong(64019))
         XCTAssertTrue(nsshared.isPrimeLong(104729))
     }
-
+    
+    func testFibonacci() {
+        let sequence = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377]
+        for (idx, num) in sequence.enumerated() {
+            XCTAssertEqual(num, Numeric.shared.fibonacci(idx))
+            XCTAssertEqual(num, nsshared.fibonacci(idx))
+        }
+        XCTAssertEqual(102334155, Numeric.shared.fibonacci(40))
+        XCTAssertEqual(102334155, nsshared.fibonacci(40))
+    }
+    
     func testPrimePerformance() {
         self.measure {
             _ = Numeric.shared.isPrime(int: 104729)

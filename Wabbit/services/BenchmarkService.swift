@@ -33,6 +33,8 @@ class BenchmarkService {
             update(reports)
             reports.append(self.factorialGroup())
             update(reports)
+            reports.append(self.fibonacciGroup())
+            update(reports)
             reports.append(self.charReplacementGroup())
             update(reports)
             reports.append(self.matchGroup())
@@ -64,6 +66,14 @@ class BenchmarkService {
             _ = NSNumeric.shared().factorialLong(13)
         }, swiftMethod: {
             _ = Numeric.shared.factorial(int: 13)
+        })
+    }
+    
+    func fibonacciGroup() -> ReportGroup {
+        return ReportGroup.build("Fibonacci", objcMethod: {
+            _ = NSNumeric.shared().fibonacci(15)
+        }, swiftMethod: {
+            _ = Numeric.shared.fibonacci(15)
         })
     }
 
