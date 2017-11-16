@@ -33,6 +33,10 @@ class BenchmarkService {
             update(reports)
             reports.append(self.factorialGroup())
             update(reports)
+            reports.append(self.charReplacementGroup())
+            update(reports)
+            reports.append(self.matchGroup())
+            update(reports)
             reports.append(self.sha1Group())
             update(reports)
             reports.append(self.sha256Group())
@@ -100,6 +104,22 @@ class BenchmarkService {
             _ = NSJsonParse.shared().parseAllCountries(from: self.json.data(using: .utf8))
         }, swiftMethod: {
             _ = JsonParse.shared.parseAllCountries(string: self.json)
+        })
+    }
+    
+    func charReplacementGroup() -> ReportGroup {
+        return ReportGroup.build("Character Replacement", objcMethod: {
+            _ = NSStringManipulation.shared().textWithNumbers(for: self.lipsum)
+        }, swiftMethod: {
+            _ = StringManipulation.shared.textWithNumbers(self.lipsum)
+        })
+    }
+    
+    func matchGroup() -> ReportGroup {
+        return ReportGroup.build("Regex Match", objcMethod: {
+            _ = NSStringManipulation.shared().matches(for: "i\\D", in: self.lipsum)
+        }, swiftMethod: {
+            _ = StringManipulation.shared.matches(for: "i\\D", in: self.lipsum)
         })
     }
 }

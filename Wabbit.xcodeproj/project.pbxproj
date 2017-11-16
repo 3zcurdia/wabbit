@@ -32,6 +32,9 @@
 		3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBC1FAC168300BAE236 /* LanguagesView.swift */; };
 		3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */; };
 		3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDC01FACD94300BAE236 /* ReportView.swift */; };
+		3083FC171FBCAAD800680302 /* StringManupulationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083FC161FBCAAD800680302 /* StringManupulationTest.swift */; };
+		3083FC191FBCB62800680302 /* StringManipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3083FC181FBCB62800680302 /* StringManipulation.swift */; };
+		3083FC1C1FBCB8B700680302 /* NSStringManipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3083FC1B1FBCB8B700680302 /* NSStringManipulation.m */; };
 		30ABE1961FB174210014082D /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 30ABE1951FB174200014082D /* countries.json */; };
 		30ABE1991FB174740014082D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1981FB174740014082D /* Country.swift */; };
 		30ABE19B1FB175240014082D /* JsonParseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE19A1FB175240014082D /* JsonParseTests.swift */; };
@@ -95,6 +98,10 @@
 		3047EDBC1FAC168300BAE236 /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
 		3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		3047EDC01FACD94300BAE236 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		3083FC161FBCAAD800680302 /* StringManupulationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManupulationTest.swift; sourceTree = "<group>"; };
+		3083FC181FBCB62800680302 /* StringManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManipulation.swift; sourceTree = "<group>"; };
+		3083FC1A1FBCB8B700680302 /* NSStringManipulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringManipulation.h; sourceTree = "<group>"; };
+		3083FC1B1FBCB8B700680302 /* NSStringManipulation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringManipulation.m; sourceTree = "<group>"; };
 		30ABE1951FB174200014082D /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
 		30ABE1981FB174740014082D /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		30ABE19A1FB175240014082D /* JsonParseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParseTests.swift; sourceTree = "<group>"; };
@@ -280,14 +287,17 @@
 			isa = PBXGroup;
 			children = (
 				3038CDCF1FAAEA8600E401C4 /* Crypto.swift */,
-				3038CDDB1FAAF45000E401C4 /* Numeric.swift */,
 				30ABE19C1FB177630014082D /* JsonParse.swift */,
+				3038CDDB1FAAF45000E401C4 /* Numeric.swift */,
+				3083FC181FBCB62800680302 /* StringManipulation.swift */,
 				3038CDD11FAAED4600E401C4 /* NSCrypto.h */,
 				3038CDD31FAAED6700E401C4 /* NSCrypto.m */,
-				30B2C4671FAB8D8100A4B683 /* NSNumeric.h */,
-				30B2C4681FAB8D8100A4B683 /* NSNumeric.m */,
 				30ABE1A01FB17D050014082D /* NSJsonParse.h */,
 				30ABE1A11FB17D050014082D /* NSJsonParse.m */,
+				30B2C4671FAB8D8100A4B683 /* NSNumeric.h */,
+				30B2C4681FAB8D8100A4B683 /* NSNumeric.m */,
+				3083FC1A1FBCB8B700680302 /* NSStringManipulation.h */,
+				3083FC1B1FBCB8B700680302 /* NSStringManipulation.m */,
 				3038CDD21FAAED6600E401C4 /* Wabbit-Bridging-Header.h */,
 			);
 			path = algorithms;
@@ -297,8 +307,9 @@
 			isa = PBXGroup;
 			children = (
 				3038CDD91FAAF02000E401C4 /* CryptoTests.swift */,
-				3038CDDD1FAAF62300E401C4 /* NumericTests.swift */,
 				30ABE19A1FB175240014082D /* JsonParseTests.swift */,
+				3038CDDD1FAAF62300E401C4 /* NumericTests.swift */,
+				3083FC161FBCAAD800680302 /* StringManupulationTest.swift */,
 			);
 			path = algorithms;
 			sourceTree = "<group>";
@@ -628,6 +639,7 @@
 				30ABE1A21FB17D050014082D /* NSJsonParse.m in Sources */,
 				30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */,
 				30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */,
+				3083FC1C1FBCB8B700680302 /* NSStringManipulation.m in Sources */,
 				301A19E41FB61BBB00352332 /* BenchmarkService.swift in Sources */,
 				30ABE1A51FB218130014082D /* NSCountry.m in Sources */,
 				301A19E61FB621A900352332 /* SwipeActionViewCell.swift in Sources */,
@@ -638,6 +650,7 @@
 				3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */,
 				3038CDD41FAAED6700E401C4 /* NSCrypto.m in Sources */,
 				30B2C4691FAB8D8100A4B683 /* NSNumeric.m in Sources */,
+				3083FC191FBCB62800680302 /* StringManipulation.swift in Sources */,
 				3038CDD01FAAEA8600E401C4 /* Crypto.swift in Sources */,
 				3038CDCA1FAAE38100E401C4 /* Report.swift in Sources */,
 			);
@@ -652,6 +665,7 @@
 				3038CDE21FAB055000E401C4 /* BenchmarkTests.swift in Sources */,
 				3038CDDE1FAAF62300E401C4 /* NumericTests.swift in Sources */,
 				3038CDAE1FAAD7D300E401C4 /* ReportTests.swift in Sources */,
+				3083FC171FBCAAD800680302 /* StringManupulationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
