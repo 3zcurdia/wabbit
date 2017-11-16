@@ -12,4 +12,5 @@
 +(NSStringManipulation *) shared;
 - (NSString *) textWithNumbersFor: (NSString*)str;
 - (NSArray<NSString *> *) matchesFor: (NSString *)regex in: (NSString *)str;
+- (NSString *) appendString: (NSString *)orig to: (NSString *)str;
 @end

@@ -37,4 +37,8 @@ class StringManipulation {
             return []
         }
     }
+    
+    func append(string str: String, to: String) -> String {
+        return "\(str)/\(to)"
+    }
 }

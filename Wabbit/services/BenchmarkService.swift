@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BenchmarkService {
+class BenchmarkService : ReportGroupBenchmarks {
     static let shared = BenchmarkService()
     lazy var lipsum: String = {
         guard let filepath = Bundle.main.path(forResource: "lipsum", ofType: "txt") else { return "lorem ipsum" }
@@ -35,6 +35,8 @@ class BenchmarkService {
             update(reports)
             reports.append(self.fibonacciGroup())
             update(reports)
+            reports.append(self.stringConcatGroup())
+            update(reports)
             reports.append(self.charReplacementGroup())
             update(reports)
             reports.append(self.matchGroup())
@@ -51,85 +53,5 @@ class BenchmarkService {
             update(reports)
             DispatchQueue.main.async { completion() }
         }
-    }
-
-    func primeGroup() -> ReportGroup {
-        return ReportGroup.build("Prime", objcMethod: {
-            _ = NSNumeric.shared().isPrimeLong(181)
-        }, swiftMethod: {
-            _ = Numeric.shared.isPrime(int: 181)
-        })
-    }
-
-    func factorialGroup() -> ReportGroup {
-        return ReportGroup.build("Factorial", objcMethod: {
-            _ = NSNumeric.shared().factorialLong(13)
-        }, swiftMethod: {
-            _ = Numeric.shared.factorial(int: 13)
-        })
-    }
-
-    func fibonacciGroup() -> ReportGroup {
-        return ReportGroup.build("Fibonacci", objcMethod: {
-            _ = NSNumeric.shared().fibonacci(15)
-        }, swiftMethod: {
-            _ = Numeric.shared.fibonacci(15)
-        })
-    }
-
-    func sha1Group() -> ReportGroup {
-        return ReportGroup.build("SHA1", objcMethod: {
-            _ = NSCrypto.shared().sha1String(self.lipsum)
-        }, swiftMethod: {
-            _ = Crypto.shared.sha1(string: self.lipsum)
-        })
-    }
-
-    func sha256Group() -> ReportGroup {
-        return ReportGroup.build("SHA256", objcMethod: {
-            _ = NSCrypto.shared().sha256String(self.lipsum)
-        }, swiftMethod: {
-            _ = Crypto.shared.sha256(string: self.lipsum)
-        })
-    }
-
-    func base64Group() -> ReportGroup {
-        return ReportGroup.build("Base64 Text", objcMethod: {
-            _ = NSCrypto.shared().base64String(self.lipsum)
-        }, swiftMethod: {
-            _ = Crypto.shared.base64(string: self.lipsum)
-        })
-    }
-
-    func base64ImageGroup() -> ReportGroup {
-        return ReportGroup.build("Base64 Image", objcMethod: {
-            _ = NSCrypto.shared().base64Image(self.logo)
-        }, swiftMethod: {
-            _ = Crypto.shared.base64(image: self.logo)
-        })
-    }
-
-    func jsonDecodeGroup() -> ReportGroup {
-        return ReportGroup.build("JSON Decode", objcMethod: {
-            _ = NSJsonParse.shared().parseAllCountries(from: self.json.data(using: .utf8))
-        }, swiftMethod: {
-            _ = JsonParse.shared.parseAllCountries(string: self.json)
-        })
-    }
-
-    func charReplacementGroup() -> ReportGroup {
-        return ReportGroup.build("Character Replacement", objcMethod: {
-            _ = NSStringManipulation.shared().textWithNumbers(for: self.lipsum)
-        }, swiftMethod: {
-            _ = StringManipulation.shared.textWithNumbers(self.lipsum)
-        })
-    }
-
-    func matchGroup() -> ReportGroup {
-        return ReportGroup.build("Regex Match", objcMethod: {
-            _ = NSStringManipulation.shared().matches(for: "i\\D", in: self.lipsum)
-        }, swiftMethod: {
-            _ = StringManipulation.shared.matches(for: "i\\D", in: self.lipsum)
-        })
     }
 }

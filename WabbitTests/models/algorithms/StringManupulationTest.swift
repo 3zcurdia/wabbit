@@ -25,4 +25,10 @@ class StringManipulationTests: XCTestCase {
         XCTAssertEqual(expected, StringManipulation.shared.matches(for: "i\\D", in: text))
         XCTAssertEqual(expected, NSStringManipulation.shared().matches(for: "i\\D", in: text))
     }
+    
+    func testConcat() {
+        let expected = "lorem/ipsum"
+        XCTAssertEqual(expected, StringManipulation.shared.append(string: "lorem", to: "ipsum"))
+        XCTAssertEqual(expected, NSStringManipulation.shared().append("lorem", to: "ipsum")!)
+    }
 }

@@ -55,4 +55,9 @@
     }
     return stringMatches;
 }
+
+- (NSString *) appendString: (NSString *)str1 to: (NSString *)str2 {
+    return [NSString stringWithFormat:@"%@/%@", str1, str2];
+}
+
 @end

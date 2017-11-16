@@ -12,6 +12,7 @@
 		30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */; };
 		30130E541FAE229100370EAC /* lipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30130E531FAE229100370EAC /* lipsum.txt */; };
 		30130E581FAE414800370EAC /* logo128.png in Resources */ = {isa = PBXBuildFile; fileRef = 30130E571FAE414800370EAC /* logo128.png */; };
+		3019A1521FBE41B5007DD48F /* BenchmarkService+Reports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3019A1511FBE41B5007DD48F /* BenchmarkService+Reports.swift */; };
 		301A19E41FB61BBB00352332 /* BenchmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A19E31FB61BBB00352332 /* BenchmarkService.swift */; };
 		301A19E61FB621A900352332 /* SwipeActionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301A19E51FB621A800352332 /* SwipeActionViewCell.swift */; };
 		3038CD991FAAD7D300E401C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CD981FAAD7D300E401C4 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGroup.swift; sourceTree = "<group>"; };
 		30130E531FAE229100370EAC /* lipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = lipsum.txt; sourceTree = "<group>"; };
 		30130E571FAE414800370EAC /* logo128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo128.png; sourceTree = "<group>"; };
+		3019A1511FBE41B5007DD48F /* BenchmarkService+Reports.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BenchmarkService+Reports.swift"; sourceTree = "<group>"; };
 		301A19E31FB61BBB00352332 /* BenchmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkService.swift; sourceTree = "<group>"; };
 		301A19E51FB621A800352332 /* SwipeActionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeActionViewCell.swift; sourceTree = "<group>"; };
 		3038CD951FAAD7D300E401C4 /* Wabbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wabbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				301A19E31FB61BBB00352332 /* BenchmarkService.swift */,
+				3019A1511FBE41B5007DD48F /* BenchmarkService+Reports.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -637,6 +640,7 @@
 				3038CDDC1FAAF45000E401C4 /* Numeric.swift in Sources */,
 				3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */,
 				30ABE1A21FB17D050014082D /* NSJsonParse.m in Sources */,
+				3019A1521FBE41B5007DD48F /* BenchmarkService+Reports.swift in Sources */,
 				30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */,
 				30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */,
 				3083FC1C1FBCB8B700680302 /* NSStringManipulation.m in Sources */,
