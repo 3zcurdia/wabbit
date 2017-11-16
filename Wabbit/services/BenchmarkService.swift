@@ -68,7 +68,7 @@ class BenchmarkService {
             _ = Numeric.shared.factorial(int: 13)
         })
     }
-    
+
     func fibonacciGroup() -> ReportGroup {
         return ReportGroup.build("Fibonacci", objcMethod: {
             _ = NSNumeric.shared().fibonacci(15)

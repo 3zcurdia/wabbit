@@ -28,7 +28,7 @@ class Numeric {
         }
         return true
     }
-    
+
     func fibonacci(_ n: Int) -> Int {
         if n < 2 {
             return n
