@@ -19,18 +19,18 @@ class JsonParseTests: XCTestCase {
     func testDecode() {
         let result = JsonParse.shared.parseAllCountries(string: source)
         let lastCountry = result.last!
-        XCTAssertEqual(246, result.count)
-        XCTAssertEqual("ZW", lastCountry.iso)
-        XCTAssertEqual("Zimbabwe", lastCountry.name)
-        XCTAssertEqual(15, lastCountry.languages.count)
+        XCTAssertEqual(148, result.count)
+        XCTAssertEqual("MA", lastCountry.iso)
+        XCTAssertEqual("Morocco", lastCountry.name)
+        XCTAssertEqual(2, lastCountry.languages.count)
     }
 
     func testDecodeObjc() {
         let result = nsshared.parseAllCountries(from: source.data(using: .utf8)!)!
         let lastCountry = result.last! as! NSCountry
-        XCTAssertEqual(246, result.count)
-        XCTAssertEqual("ZW", lastCountry.iso)
-        XCTAssertEqual("Zimbabwe", lastCountry.name)
-        XCTAssertEqual(15, lastCountry.languages.count)
+        XCTAssertEqual(148, result.count)
+        XCTAssertEqual("MA", lastCountry.iso)
+        XCTAssertEqual("Morocco", lastCountry.name)
+        XCTAssertEqual(2, lastCountry.languages.count)
     }
 }

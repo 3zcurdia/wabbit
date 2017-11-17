@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BenchmarkService : ReportGroupBenchmarks {
+class BenchmarkService: ReportGroupBenchmarks {
     static let shared = BenchmarkService()
     lazy var lipsum: String = {
         guard let filepath = Bundle.main.path(forResource: "lipsum", ofType: "txt") else { return "lorem ipsum" }

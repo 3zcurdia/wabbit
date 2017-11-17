@@ -29,11 +29,11 @@ class Numeric {
         return true
     }
 
-    func fibonacci(_ n: Int) -> Int {
-        if n < 2 {
-            return n
+    func fibonacci(_ num: Int) -> Int {
+        if num < 2 {
+            return num
         } else {
-            return fibonacci(n-1) + fibonacci(n-2)
+            return fibonacci(num-1) + fibonacci(num-2)
         }
     }
 }

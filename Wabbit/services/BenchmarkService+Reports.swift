@@ -30,7 +30,7 @@ extension BenchmarkService {
             _ = Numeric.shared.isPrime(int: 181)
         })
     }
-    
+
     func factorialGroup() -> ReportGroup {
         return ReportGroup.build("Factorial", objcMethod: {
             _ = NSNumeric.shared().factorialLong(13)
@@ -38,7 +38,7 @@ extension BenchmarkService {
             _ = Numeric.shared.factorial(int: 13)
         })
     }
-    
+
     func fibonacciGroup() -> ReportGroup {
         return ReportGroup.build("Fibonacci", objcMethod: {
             _ = NSNumeric.shared().fibonacci(15)
@@ -46,7 +46,7 @@ extension BenchmarkService {
             _ = Numeric.shared.fibonacci(15)
         })
     }
-    
+
     func sha1Group() -> ReportGroup {
         return ReportGroup.build("SHA1", objcMethod: {
             _ = NSCrypto.shared().sha1String(self.lipsum)
@@ -54,7 +54,7 @@ extension BenchmarkService {
             _ = Crypto.shared.sha1(string: self.lipsum)
         })
     }
-    
+
     func sha256Group() -> ReportGroup {
         return ReportGroup.build("SHA256", objcMethod: {
             _ = NSCrypto.shared().sha256String(self.lipsum)
@@ -62,7 +62,7 @@ extension BenchmarkService {
             _ = Crypto.shared.sha256(string: self.lipsum)
         })
     }
-    
+
     func base64Group() -> ReportGroup {
         return ReportGroup.build("Base64 Text", objcMethod: {
             _ = NSCrypto.shared().base64String(self.lipsum)
@@ -70,7 +70,7 @@ extension BenchmarkService {
             _ = Crypto.shared.base64(string: self.lipsum)
         })
     }
-    
+
     func base64ImageGroup() -> ReportGroup {
         return ReportGroup.build("Base64 Image", objcMethod: {
             _ = NSCrypto.shared().base64Image(self.logo)
@@ -78,7 +78,7 @@ extension BenchmarkService {
             _ = Crypto.shared.base64(image: self.logo)
         })
     }
-    
+
     func jsonDecodeGroup() -> ReportGroup {
         return ReportGroup.build("JSON Decode", objcMethod: {
             _ = NSJsonParse.shared().parseAllCountries(from: self.json.data(using: .utf8))
@@ -86,7 +86,7 @@ extension BenchmarkService {
             _ = JsonParse.shared.parseAllCountries(string: self.json)
         })
     }
-    
+
     func stringConcatGroup() -> ReportGroup {
         return ReportGroup.build("String concatenation", objcMethod: {
             _ = StringManipulation.shared.append(string: self.lipsum, to: self.lipsum)
@@ -94,7 +94,7 @@ extension BenchmarkService {
             _ = NSStringManipulation.shared().append(self.lipsum, to: self.lipsum)!
         })
     }
-    
+
     func charReplacementGroup() -> ReportGroup {
         return ReportGroup.build("Character Replacement", objcMethod: {
             _ = NSStringManipulation.shared().textWithNumbers(for: self.lipsum)
@@ -102,7 +102,7 @@ extension BenchmarkService {
             _ = StringManipulation.shared.textWithNumbers(self.lipsum)
         })
     }
-    
+
     func matchGroup() -> ReportGroup {
         return ReportGroup.build("Regex Match", objcMethod: {
             _ = NSStringManipulation.shared().matches(for: "i\\D", in: self.lipsum)
