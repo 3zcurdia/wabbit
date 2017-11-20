@@ -13,4 +13,5 @@
 @property(nonatomic) NSString* name;
 @property(nonatomic) NSArray* languages;
 - (instancetype)initWithISO: (NSString*)iso name: (NSString*)name languanges: (NSArray*)langs;
+- (NSDictionary *)dictionary;
 @end

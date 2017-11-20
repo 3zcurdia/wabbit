@@ -25,7 +25,7 @@
     return self;
 }
 
-- (NSArray *) parseAllCountriesFrom: (NSData*)jsonData
+- (NSArray *) decodeAllCountriesFrom: (NSData*)jsonData
 {
     NSArray *arr = [self parseArray:jsonData];
     NSMutableArray *out = [[NSMutableArray alloc] initWithCapacity:0];
@@ -38,6 +38,15 @@
         }
     }
     return out;
+}
+
+- (NSString *) encodeAllCountriesFrom: (NSArray *)jsonArray
+{
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:jsonArray options:NSJSONWritingPrettyPrinted error:&error];
+    if(error) { NSLog(@"%@", error); }
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return jsonString;
 }
 
 - (NSArray *) parseArray: (NSData*)jsonData

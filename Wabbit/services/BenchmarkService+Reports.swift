@@ -16,7 +16,8 @@ protocol ReportGroupBenchmarks {
     func sha256Group() -> ReportGroup
     func base64Group() -> ReportGroup
     func base64ImageGroup() -> ReportGroup
-    func jsonDecodeGroup() -> ReportGroup
+    func jsonDecodeGroup(data: Data) -> ReportGroup
+    func jsonEncodeGroup() -> ReportGroup
     func stringConcatGroup() -> ReportGroup
     func charReplacementGroup() -> ReportGroup
     func matchGroup() -> ReportGroup
@@ -79,11 +80,24 @@ extension BenchmarkService {
         })
     }
 
-    func jsonDecodeGroup() -> ReportGroup {
+    func jsonDecodeGroup(data: Data) -> ReportGroup {
         return ReportGroup.build("JSON Decode", objcMethod: {
-            _ = NSJsonParse.shared().parseAllCountries(from: self.json.data(using: .utf8))
+            _ = NSJsonParse.shared().decodeAllCountries(from: data)
         }, swiftMethod: {
-            _ = JsonParse.shared.parseAllCountries(string: self.json)
+            _ = JsonParse.shared.decodeAllCountries(data: data)
+        })
+    }
+
+    func jsonEncodeGroup() -> ReportGroup {
+        // Force casting to objective-c native objects
+        var objcSource = [NSDictionary]()
+        for item in self.countries {
+            objcSource.append(NSCountry(iso: item.iso, name: item.name, languanges: item.languages).dictionary()! as NSDictionary)
+        }
+        return ReportGroup.build("Json Encode", objcMethod: {
+            _ = NSJsonParse.shared().encodeAllCountries(from: objcSource)!
+        }, swiftMethod: {
+            _ = JsonParse.shared.encodeAllCountries(self.countries)
         })
     }
 

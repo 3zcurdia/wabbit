@@ -20,4 +20,11 @@
     }
     return self;
 }
+
+- (NSDictionary *) dictionary{
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            self.iso, @"iso",
+            self.name, @"name",
+            self.languages, @"languages", nil];
+}
 @end

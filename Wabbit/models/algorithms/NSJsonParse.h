@@ -10,5 +10,6 @@
 
 @interface NSJsonParse : NSObject
 +(NSJsonParse *) shared;
-- (NSArray *) parseAllCountriesFrom: (NSData*)jsonData;
+- (NSArray *) decodeAllCountriesFrom: (NSData*)jsonData;
+- (NSString *) encodeAllCountriesFrom: (NSArray *)jsonArray;
 @end

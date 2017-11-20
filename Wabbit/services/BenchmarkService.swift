@@ -20,9 +20,15 @@ class BenchmarkService: ReportGroupBenchmarks {
         return UIImage(contentsOfFile: filepath) ?? UIImage()
     }()
 
-    lazy var json: String = {
-        guard let filepath = Bundle.main.path(forResource: "countries", ofType: "json") else { return "[]" }
-        return (try? String(contentsOfFile: filepath)) ?? "[]"
+    lazy var json: Data? = {
+        guard let filepath = Bundle.main.path(forResource: "countries", ofType: "json") else { return "[]".data(using: .utf8) }
+        let jsonString = (try? String(contentsOfFile: filepath)) ?? "[]"
+        return jsonString.data(using: .utf8)
+    }()
+
+    lazy var countries: [Country] = {
+        guard let unwrappedCountries = self.json else { return JsonParse.shared.defaultDecoded }
+        return JsonParse.shared.decodeAllCountries(data: unwrappedCountries)
     }()
 
     func run(onUpdate update: @escaping (([ReportGroup]) -> Void), completion: @escaping (() -> Void)) {
@@ -49,8 +55,12 @@ class BenchmarkService: ReportGroupBenchmarks {
             update(reports)
             reports.append(self.base64ImageGroup())
             update(reports)
-            reports.append(self.jsonDecodeGroup())
-            update(reports)
+            if let unwrapedJson = self.json {
+                reports.append(self.jsonDecodeGroup(data: unwrapedJson))
+                update(reports)
+                reports.append(self.jsonEncodeGroup())
+                update(reports)
+            }
             DispatchQueue.main.async { completion() }
         }
     }
