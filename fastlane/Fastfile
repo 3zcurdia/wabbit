@@ -22,8 +22,9 @@ platform :ios do
     # carthage
   end
 
+  desc "Autocorrect swfit code style with swiftlint"
   lane :lint do
-    swiftlint(mode: :lint, config_file: '.swiftlint.yml')
+    swiftlint(mode: :autocorrect, config_file: '.swiftlint.yml')
   end
 
   desc "Runs all the tests"
@@ -34,7 +35,7 @@ platform :ios do
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    swiftlint(mode: :autocorrect, ignore_exit_status: true)
+    swiftlint(mode: :lint, ignore_exit_status: true)
     ensure_git_status_clean
     increment_build_number
     commit_version_bump
