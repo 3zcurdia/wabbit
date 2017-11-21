@@ -34,7 +34,7 @@ xcode-select --install
 ```
 fastlane ios lint
 ```
-
+Autocorrect swfit code style with swiftlint
 ### ios test
 ```
 fastlane ios test
