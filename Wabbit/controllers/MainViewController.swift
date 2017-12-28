@@ -11,7 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     let topView: UIView = {
         let tv = UIView()
-        tv.backgroundColor = .yankeesBlue
+        tv.backgroundColor = .platinum
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
@@ -21,13 +21,9 @@ class MainViewController: UIViewController {
         return rv
     }()
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black
+        view.backgroundColor = .platinum
         setupLayout()
     }
 

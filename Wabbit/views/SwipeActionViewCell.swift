@@ -16,7 +16,7 @@ class SwipeActionViewCell: UICollectionViewCell {
     private let actionTextView: UITextView = {
         let tv = UITextView()
         tv.backgroundColor = .clear
-        tv.textColor = .white
+        tv.textColor = .black
         tv.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         tv.textAlignment = .center
         tv.isSelectable = false

@@ -27,7 +27,7 @@ class DeviceInfoView: UIView {
         } else {
             iv.image = UIImage(named: "iphone")!.withRenderingMode(.alwaysTemplate)
         }
-        iv.tintColor = .white
+        iv.tintColor = .black
         iv.contentMode = .scaleAspectFit
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
@@ -64,7 +64,7 @@ class DeviceInfoView: UIView {
     }
 
     private func setupLayout() {
-        self.backgroundColor = UIColor.yankeesBlue
+        self.backgroundColor = .platinum
         addSubview(container)
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor),
@@ -96,7 +96,7 @@ class DeviceInfoView: UIView {
     }
 
     private func loadInfo() {
-        let foregroundColor = UIColor.white
+        let foregroundColor = UIColor.black
         let deviseAttributes = [
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26),
             NSAttributedStringKey.foregroundColor: foregroundColor
@@ -113,7 +113,7 @@ class DeviceInfoView: UIView {
         guard let time = elapsedTime else { return }
         let elapsedAttributes = [
             NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
-            NSAttributedStringKey.foregroundColor: UIColor.white
+            NSAttributedStringKey.foregroundColor: UIColor.black
         ]
         let attributedText = NSMutableAttributedString(string: "Elapsed time: \(time.rounded(toDigits: 5) ) [s]", attributes: elapsedAttributes)
         elapsedTimeTextView.attributedText = attributedText

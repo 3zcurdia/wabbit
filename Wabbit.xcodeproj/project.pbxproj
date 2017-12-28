@@ -29,6 +29,8 @@
 		3038CDDC1FAAF45000E401C4 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDB1FAAF45000E401C4 /* Numeric.swift */; };
 		3038CDDE1FAAF62300E401C4 /* NumericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDDD1FAAF62300E401C4 /* NumericTests.swift */; };
 		3038CDE21FAB055000E401C4 /* BenchmarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3038CDE11FAB055000E401C4 /* BenchmarkTests.swift */; };
+		303919621FF45184008B15F7 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303919611FF45184008B15F7 /* StartViewController.swift */; };
+		303919641FF451D8008B15F7 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303919631FF451D8008B15F7 /* LoaderView.swift */; };
 		3047EDB91FAC0D7B00BAE236 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */; };
 		3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBC1FAC168300BAE236 /* LanguagesView.swift */; };
 		3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */; };
@@ -96,10 +98,13 @@
 		3038CDDB1FAAF45000E401C4 /* Numeric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numeric.swift; sourceTree = "<group>"; };
 		3038CDDD1FAAF62300E401C4 /* NumericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericTests.swift; sourceTree = "<group>"; };
 		3038CDE11FAB055000E401C4 /* BenchmarkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchmarkTests.swift; sourceTree = "<group>"; };
+		303919611FF45184008B15F7 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		303919631FF451D8008B15F7 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 		3047EDB81FAC0D7B00BAE236 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		3047EDBC1FAC168300BAE236 /* LanguagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesView.swift; sourceTree = "<group>"; };
 		3047EDBE1FAC371D00BAE236 /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		3047EDC01FACD94300BAE236 /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		306E00A21FE34F3F003DC309 /* Wabbit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wabbit.entitlements; sourceTree = "<group>"; };
 		3083FC161FBCAAD800680302 /* StringManupulationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManupulationTest.swift; sourceTree = "<group>"; };
 		3083FC181FBCB62800680302 /* StringManipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringManipulation.swift; sourceTree = "<group>"; };
 		3083FC1A1FBCB8B700680302 /* NSStringManipulation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSStringManipulation.h; sourceTree = "<group>"; };
@@ -208,6 +213,7 @@
 		3038CD971FAAD7D300E401C4 /* Wabbit */ = {
 			isa = PBXGroup;
 			children = (
+				306E00A21FE34F3F003DC309 /* Wabbit.entitlements */,
 				301A19E21FB61B9D00352332 /* services */,
 				3038CDC81FAAE28C00E401C4 /* models */,
 				3038CDC71FAAE27B00E401C4 /* controllers */,
@@ -252,6 +258,7 @@
 				3047EDC01FACD94300BAE236 /* ReportView.swift */,
 				30130E4A1FAD551600370EAC /* ReportViewCell.swift */,
 				301A19E51FB621A800352332 /* SwipeActionViewCell.swift */,
+				303919631FF451D8008B15F7 /* LoaderView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -260,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				3038CD9A1FAAD7D300E401C4 /* MainViewController.swift */,
+				303919611FF45184008B15F7 /* StartViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -416,6 +424,14 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					3038CDA81FAAD7D300E401C4 = {
 						CreatedOnToolsVersion = 9.1;
@@ -636,6 +652,7 @@
 				30ABE19D1FB177630014082D /* JsonParse.swift in Sources */,
 				3038CD9B1FAAD7D300E401C4 /* MainViewController.swift in Sources */,
 				30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */,
+				303919641FF451D8008B15F7 /* LoaderView.swift in Sources */,
 				3038CDCC1FAAE39800E401C4 /* Benchmark.swift in Sources */,
 				3038CDDC1FAAF45000E401C4 /* Numeric.swift in Sources */,
 				3047EDBF1FAC371D00BAE236 /* UIColor+Theme.swift in Sources */,
@@ -653,6 +670,7 @@
 				3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */,
 				3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */,
 				3038CDD41FAAED6700E401C4 /* NSCrypto.m in Sources */,
+				303919621FF45184008B15F7 /* StartViewController.swift in Sources */,
 				30B2C4691FAB8D8100A4B683 /* NSNumeric.m in Sources */,
 				3083FC191FBCB62800680302 /* StringManipulation.swift in Sources */,
 				3038CDD01FAAEA8600E401C4 /* Crypto.swift in Sources */,

@@ -17,9 +17,9 @@ class ReportViewCell: UICollectionViewCell {
     private let titleLabel: UILabel = {
         let tv = UILabel()
         tv.text = "Report Group"
-        tv.textColor = .white
+        tv.textColor = .black
         tv.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        tv.backgroundColor = .black
+        tv.backgroundColor = .tangerine
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
     }()
@@ -46,7 +46,7 @@ class ReportViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .black
+        backgroundColor = .tangerine
         setupLayout()
     }
 
@@ -58,7 +58,7 @@ class ReportViewCell: UICollectionViewCell {
         addSubview(titleLabel)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             titleLabel.heightAnchor.constraint(equalToConstant: 30)
         ])
@@ -80,7 +80,7 @@ class ReportViewCell: UICollectionViewCell {
 
     private func updateViews() {
         guard let report = reportGroup else { return }
-        titleLabel.text = report.title
+        titleLabel.text = "\t\(report.title)"
         objcReportView.attributedText = extractFormattedText(report: report.objcReport)
         swiftReportView.attributedText = extractFormattedText(report: report.swiftReport)
     }
@@ -90,13 +90,13 @@ class ReportViewCell: UICollectionViewCell {
         let ips = report.ips()
         let comparison = report.baselineComparison().rounded(toDigits: 2)
         let elapsedAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
-        let attributedText = NSMutableAttributedString(string: "\(elapsed) [ms]", attributes: elapsedAttributes)
+        let attributedText = NSMutableAttributedString(string: "\t\(elapsed) [ms]", attributes: elapsedAttributes)
 
         let ipsAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
-        attributedText.append(NSAttributedString(string: "\n\(ips) [ips]", attributes: ipsAttributes))
+        attributedText.append(NSAttributedString(string: "\n\t\(ips) [ips]", attributes: ipsAttributes))
 
         let comparisonAttributs = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: .bold)]
-        attributedText.append(NSAttributedString(string: "\n\(comparison)x", attributes: comparisonAttributs))
+        attributedText.append(NSAttributedString(string: "\n\t\(comparison)x", attributes: comparisonAttributs))
         return attributedText
     }
 }

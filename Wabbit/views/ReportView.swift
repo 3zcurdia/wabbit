@@ -10,7 +10,6 @@ import UIKit
 
 class ReportView: UIView {
     let reportCellId = "reportCell"
-    let actionCellId = "actionCell"
     let infoView: DeviceInfoView = {
         let dv = DeviceInfoView()
         dv.translatesAutoresizingMaskIntoConstraints = false
@@ -26,10 +25,7 @@ class ReportView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .black
-        cv.refreshControl = UIRefreshControl()
-        cv.refreshControl?.backgroundColor = .platinum
-        cv.refreshControl?.addTarget(self, action: #selector(refreshBenchmarks), for: .valueChanged)
+        cv.backgroundColor = .platinum
         cv.translatesAutoresizingMaskIntoConstraints = false
         return cv
     }()
@@ -42,7 +38,6 @@ class ReportView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         reportsCollection.register(ReportViewCell.self, forCellWithReuseIdentifier: self.reportCellId)
-        reportsCollection.register(SwipeActionViewCell.self, forCellWithReuseIdentifier: self.actionCellId)
         reportsCollection.delegate = self
         reportsCollection.dataSource = self
         setupLayout()
@@ -76,16 +71,6 @@ class ReportView: UIView {
             ])
     }
 
-    @objc func refreshBenchmarks() {
-        reportsCollection.refreshControl?.beginRefreshing()
-        let startTime = Date()
-        BenchmarkService.shared.run(onUpdate: { reports in
-            self.reportGroups = reports
-        }, completion: {
-            self.infoView.elapsedTime = Date().timeIntervalSince(startTime)
-            self.reportsCollection.refreshControl?.endRefreshing()
-        })
-    }
 }
 
 extension ReportView: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -94,17 +79,11 @@ extension ReportView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let unwrapedGroups = reportGroups {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reportCellId,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reportCellId,
                                                                 for: indexPath) as? ReportViewCell else { return UICollectionViewCell() }
-            cell.reportGroup = unwrapedGroups[indexPath.row]
-            return cell
-        } else {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: actionCellId,
-                                                                for: indexPath) as? SwipeActionViewCell else { return UICollectionViewCell() }
-            cell.text = "Swipe down to run benchmarks!"
-            return cell
-        }
+        guard let unwrapedGroups = reportGroups else { return UICollectionViewCell() }
+        cell.reportGroup = unwrapedGroups[indexPath.row]
+        return cell
     }
 }
 
