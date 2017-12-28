@@ -9,8 +9,8 @@
 import UIKit
 
 class StartViewController: UIViewController {
+    var running : Bool = false
     var reports = [ReportGroup]()
-    
     let loader : LoaderView = {
         let view = LoaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -51,13 +51,16 @@ class StartViewController: UIViewController {
     }
     
     @objc func tapViewHandler() {
+        if running { return }
+        running = true
         label.text = "running"
-        runBenchmarks { elapsed in
-            print(elapsed)
+        runBenchmarks { elapsedTime in
+            self.running = false
             DispatchQueue.main.async { [weak self] in
                 self?.label.text = "completed"
                 let mainViewController = MainViewController()
-                mainViewController.reportView.reportGroups = self?.reports
+                mainViewController.reports = self?.reports
+                mainViewController.elapsedTime = elapsedTime
                 self?.present(mainViewController, animated: true, completion: nil)
             }
         }

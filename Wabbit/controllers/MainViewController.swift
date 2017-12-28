@@ -9,6 +9,16 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    var elapsedTime : Double! {
+        didSet {
+            self.reportView.infoView.elapsedTime = elapsedTime
+        }
+    }
+    var reports : [ReportGroup]! {
+        didSet {
+            self.reportView.reportGroups = reports
+        }
+    }
     let topView: UIView = {
         let tv = UIView()
         tv.backgroundColor = .platinum
