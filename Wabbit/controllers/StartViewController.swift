@@ -9,14 +9,14 @@
 import UIKit
 
 class StartViewController: UIViewController {
-    var running : Bool = false
+    var running: Bool = false
     var reports = [ReportGroup]()
-    let loader : LoaderView = {
+    let loader: LoaderView = {
         let view = LoaderView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    let label : UILabel = {
+    let label: UILabel = {
         let lbl = UILabel()
         lbl.textColor = .platinum
         lbl.text = "Tap to start benchmark"
@@ -25,7 +25,7 @@ class StartViewController: UIViewController {
         lbl.translatesAutoresizingMaskIntoConstraints = false
         return lbl
     }()
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -49,7 +49,7 @@ class StartViewController: UIViewController {
             ])
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapViewHandler)))
     }
-    
+
     @objc func tapViewHandler() {
         if running { return }
         running = true
@@ -65,7 +65,7 @@ class StartViewController: UIViewController {
             }
         }
     }
-    
+
     func runBenchmarks(completion: @escaping ((Double) -> Void)) {
         let startTime = Date()
         self.loader.progress = 0

@@ -9,21 +9,21 @@
 import UIKit
 
 class LoaderView: UIView {
-    lazy var pulseLayer : CAShapeLayer = {
+    lazy var pulseLayer: CAShapeLayer = {
         let shape = self.buildCircleShape(fillColor: UIColor.platinum.opaque(by: 0.2), strokeColor: .clear)
         return shape
     }()
-    lazy var trackLayer : CAShapeLayer = {
+    lazy var trackLayer: CAShapeLayer = {
         let shape = self.buildCircleShape(fillColor: .yankeesBlue, strokeColor: .platinum)
         return shape
     }()
-    lazy var shapeLayer : CAShapeLayer = {
+    lazy var shapeLayer: CAShapeLayer = {
         let shape = self.buildCircleShape(fillColor: .clear, strokeColor: .tangerine)
         shape.strokeEnd = 0
         shape.transform = CATransform3DMakeRotation(-CGFloat.pi/2.0, 0, 0, 1)
         return shape
     }()
-    var shapeCenter : CGPoint? {
+    var shapeCenter: CGPoint? {
         didSet {
             guard let shapeCenter = self.shapeCenter else { return }
             shapeLayer.position = shapeCenter
@@ -31,7 +31,7 @@ class LoaderView: UIView {
             pulseLayer.position = shapeCenter
         }
     }
-    var progress : CGFloat? {
+    var progress: CGFloat? {
         didSet {
             guard let unrappedProgress = self.progress else { return }
             DispatchQueue.main.async { [weak self] in
@@ -39,7 +39,7 @@ class LoaderView: UIView {
             }
         }
     }
-    private let logoView : UIImageView = {
+    private let logoView: UIImageView = {
         let iv = UIImageView()
         iv.image = UIImage(named: "wabbit")
         iv.contentMode = .scaleAspectFit
@@ -57,16 +57,16 @@ class LoaderView: UIView {
         shape.lineCap = kCALineCapRound
         return shape
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSublayout()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func setupSublayout() {
         self.backgroundColor = .yankeesBlue
         self.layer.addSublayer(pulseLayer)
@@ -78,10 +78,10 @@ class LoaderView: UIView {
             logoView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             logoView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             logoView.widthAnchor.constraint(equalToConstant: 200),
-            logoView.heightAnchor.constraint(equalToConstant: 200),
+            logoView.heightAnchor.constraint(equalToConstant: 200)
             ])
     }
-    
+
     func animatePuslatingLayer() {
         let animation = CABasicAnimation(keyPath: "transform.scale")
         animation.toValue = 1.3

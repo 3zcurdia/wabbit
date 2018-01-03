@@ -1,9 +1,9 @@
 platform :ios, '11.0'
 
-plugin 'cocoapods-keys', {
-  project: 'Wabbit',
-  keys: []
-}
+# plugin 'cocoapods-keys', {
+#   project: 'Wabbit',
+#   keys: []
+# }
 
 target 'Wabbit' do
   use_frameworks!

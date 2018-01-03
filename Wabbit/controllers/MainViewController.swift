@@ -9,12 +9,12 @@
 import UIKit
 
 class MainViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    var elapsedTime : Double! {
+    var elapsedTime: Double! {
         didSet {
             self.reportView.infoView.elapsedTime = elapsedTime
         }
     }
-    var reports : [ReportGroup]! {
+    var reports: [ReportGroup]! {
         didSet {
             self.reportView.reportGroups = reports
             self.graphView.reportGroups = reports
@@ -22,7 +22,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
 
     private let reuseIdentifier = "PageCell"
-    private let pageControl : UIPageControl = {
+    private let pageControl: UIPageControl = {
         let pg = UIPageControl()
         pg.currentPage = 0
         pg.numberOfPages = 2
@@ -30,17 +30,17 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
         pg.pageIndicatorTintColor = UIColor.yankeesBlue.lighten(by: 0.6).opaque(by: 0.6)
         return pg
     }()
-    let reportView : ReportView = {
+    let reportView: ReportView = {
         let rv = ReportView()
         rv.translatesAutoresizingMaskIntoConstraints = false
         return rv
     }()
-    let graphView : GraphView = {
+    let graphView: GraphView = {
         let view = GraphView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
     convenience init() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -56,7 +56,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
 
         setupLayout()
     }
-    
+
     private func setupLayout() {
         view.backgroundColor = .platinum
         let navControllerView = UIStackView(arrangedSubviews: [pageControl])
@@ -74,16 +74,16 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
-    
+
     override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let x = targetContentOffset.pointee.x
         pageControl.currentPage = Int(x / view.frame.width)
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         cell.backgroundColor = .platinum
@@ -107,7 +107,7 @@ class MainViewController: UICollectionViewController, UICollectionViewDelegateFl
             return cell
         }
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }

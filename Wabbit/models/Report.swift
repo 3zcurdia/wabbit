@@ -16,7 +16,7 @@ struct Report {
     func ips() -> Int {
         return Int(1.0/time)
     }
-    
+
     func miliseconds() -> Double {
         return (time*1000).rounded(toDigits: 10)
     }
