@@ -20,11 +20,11 @@ class WabbitUITests: XCTestCase {
 
     func testRunBenchmarks() {
         snapshot("0-Launch")
-        XCUIApplication().collectionViews.cells.children(matching: .textView).element.swipeDown()
-        snapshot("1-TriggerBenchmarks")
-
-        XCUIDevice.shared.orientation = .landscapeRight
-        snapshot("2-LandscapeLeft")
+        let app = XCUIApplication()
+        app.otherElements.containing(.staticText, identifier:"Tap to start benchmark").children(matching: .other).element.tap()
+        snapshot("1-textResults")
+        XCUIApplication().collectionViews/*@START_MENU_TOKEN@*/.collectionViews.staticTexts["\tPrime"]/*[[".cells.collectionViews",".cells.staticTexts[\"\\tPrime\"]",".staticTexts[\"\\tPrime\"]",".collectionViews"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/.swipeLeft()
+        snapshot("2-graphResults")
     }
 
 }
