@@ -7,6 +7,7 @@ plugin 'cocoapods-keys', {
 
 target 'Wabbit' do
   use_frameworks!
+  pod 'Charts'
 
   target 'WabbitTests' do
     inherit! :search_paths

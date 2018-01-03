@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		20FB32F64C51DC0AA951E899 /* Pods_WabbitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */; };
+		300680681FFBFF48007FAAB2 /* GraphViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300680671FFBFF48007FAAB2 /* GraphViewCell.swift */; };
 		30130E4B1FAD551600370EAC /* ReportViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4A1FAD551600370EAC /* ReportViewCell.swift */; };
 		30130E4D1FAE0E4D00370EAC /* ReportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */; };
 		30130E541FAE229100370EAC /* lipsum.txt in Resources */ = {isa = PBXBuildFile; fileRef = 30130E531FAE229100370EAC /* lipsum.txt */; };
@@ -47,6 +48,7 @@
 		30ABE1AA1FB271E50014082D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30ABE1A81FB271DE0014082D /* SnapshotHelper.swift */; };
 		30B2C4691FAB8D8100A4B683 /* NSNumeric.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C4681FAB8D8100A4B683 /* NSNumeric.m */; };
 		30B2C46D1FABEF2700A4B683 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */; };
+		30F63B8F1FF739EA00BE35C6 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F63B8E1FF739EA00BE35C6 /* GraphView.swift */; };
 		C9F38B71259013E9C237B171 /* Pods_Wabbit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD894B927E45DB96151B721E /* Pods_Wabbit.framework */; };
 		F90F6A2931E3262789698DE6 /* Pods_WabbitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 980F380D34D80490057FD411 /* Pods_WabbitUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +71,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300680671FFBFF48007FAAB2 /* GraphViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewCell.swift; sourceTree = "<group>"; };
 		30130E4A1FAD551600370EAC /* ReportViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewCell.swift; sourceTree = "<group>"; };
 		30130E4C1FAE0E4D00370EAC /* ReportGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportGroup.swift; sourceTree = "<group>"; };
 		30130E531FAE229100370EAC /* lipsum.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = lipsum.txt; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		30B2C4671FAB8D8100A4B683 /* NSNumeric.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSNumeric.h; sourceTree = "<group>"; };
 		30B2C4681FAB8D8100A4B683 /* NSNumeric.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSNumeric.m; sourceTree = "<group>"; };
 		30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
+		30F63B8E1FF739EA00BE35C6 /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		481BA205AA4D811F6070ED71 /* Pods-Wabbit.adhoc.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.adhoc.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.adhoc.xcconfig"; sourceTree = "<group>"; };
 		62E9300F7368D5EF02917EDB /* Pods_WabbitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WabbitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768CD3E0E6117D085B287607 /* Pods-Wabbit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wabbit.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit.release.xcconfig"; sourceTree = "<group>"; };
@@ -255,8 +259,10 @@
 			children = (
 				30B2C46C1FABEF2700A4B683 /* DeviceInfoView.swift */,
 				3047EDBC1FAC168300BAE236 /* LanguagesView.swift */,
+				30F63B8E1FF739EA00BE35C6 /* GraphView.swift */,
 				3047EDC01FACD94300BAE236 /* ReportView.swift */,
 				30130E4A1FAD551600370EAC /* ReportViewCell.swift */,
+				300680671FFBFF48007FAAB2 /* GraphViewCell.swift */,
 				301A19E51FB621A800352332 /* SwipeActionViewCell.swift */,
 				303919631FF451D8008B15F7 /* LoaderView.swift */,
 			);
@@ -583,10 +589,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wabbit/Pods-Wabbit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Keys/Keys.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keys.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -669,12 +677,14 @@
 				30ABE1991FB174740014082D /* Country.swift in Sources */,
 				3047EDC11FACD94300BAE236 /* ReportView.swift in Sources */,
 				3047EDBD1FAC168300BAE236 /* LanguagesView.swift in Sources */,
+				30F63B8F1FF739EA00BE35C6 /* GraphView.swift in Sources */,
 				3038CDD41FAAED6700E401C4 /* NSCrypto.m in Sources */,
 				303919621FF45184008B15F7 /* StartViewController.swift in Sources */,
 				30B2C4691FAB8D8100A4B683 /* NSNumeric.m in Sources */,
 				3083FC191FBCB62800680302 /* StringManipulation.swift in Sources */,
 				3038CDD01FAAEA8600E401C4 /* Crypto.swift in Sources */,
 				3038CDCA1FAAE38100E401C4 /* Report.swift in Sources */,
+				300680681FFBFF48007FAAB2 /* GraphViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

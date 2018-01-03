@@ -69,9 +69,9 @@ class StartViewController: UIViewController {
     func runBenchmarks(completion: @escaping ((Double) -> Void)) {
         let startTime = Date()
         self.loader.progress = 0
-        BenchmarkService.shared.run(onUpdate: { results in
+        BenchmarkService.shared.run(onUpdate: { (results, progress) in
             self.reports = results
-            self.loader.progress = CGFloat(results.count) / CGFloat(12.0)
+            self.loader.progress = progress
         }, completion: {
             completion(Date().timeIntervalSince(startTime))
         })

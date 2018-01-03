@@ -13,7 +13,7 @@ class Benchmark {
     let times: Int
     let warmup: UInt
 
-    init(times: Int = 1_000, warmup: UInt = 5) {
+    init(times: Int = 100, warmup: UInt = 5) {
         self.times = times
         self.warmup = warmup
     }

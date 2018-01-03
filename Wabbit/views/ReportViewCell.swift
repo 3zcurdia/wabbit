@@ -86,7 +86,7 @@ class ReportViewCell: UICollectionViewCell {
     }
 
     private func extractFormattedText(report: Report) -> NSAttributedString {
-        let elapsed = (report.time*1000).rounded(toDigits: 10)
+        let elapsed = report.miliseconds()
         let ips = report.ips()
         let comparison = report.baselineComparison().rounded(toDigits: 2)
         let elapsedAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
