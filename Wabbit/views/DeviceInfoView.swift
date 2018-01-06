@@ -101,7 +101,8 @@ class DeviceInfoView: UIView {
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26),
             NSAttributedStringKey.foregroundColor: foregroundColor
         ]
-        let attributedText = NSMutableAttributedString(string: "\(devise.modelName)", attributes: deviseAttributes)
+        let modelName = devise.modelName
+        let attributedText = NSMutableAttributedString(string: "\(modelName)", attributes: deviseAttributes)
         let systemAttributes = [
             NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor
         ]
