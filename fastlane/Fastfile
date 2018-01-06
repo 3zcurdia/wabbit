@@ -53,7 +53,7 @@ platform :ios do
     # match(type: "appstore")
     cert(output_path: "provisioning")
     sigh(output_path: "provisioning")
-    snapshot
+    # snapshot
     gym # Build your app - more options available
     deliver(force: true)
     # frameit
