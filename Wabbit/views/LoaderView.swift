@@ -54,7 +54,7 @@ class LoaderView: UIView {
         shape.fillColor = fillColor.cgColor
         shape.strokeColor = strokeColor.cgColor
         shape.lineWidth = 15
-        shape.lineCap = kCALineCapRound
+        shape.lineCap = CAShapeLayerLineCap.round
         return shape
     }
 
@@ -88,7 +88,7 @@ class LoaderView: UIView {
         animation.duration = 1
         animation.autoreverses = true
         animation.repeatCount = Float.infinity
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
         pulseLayer.add(animation, forKey: "pulsating.cirlce")
     }
 }

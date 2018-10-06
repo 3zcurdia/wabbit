@@ -7,7 +7,7 @@ platform :ios, '11.0'
 
 target 'Wabbit' do
   use_frameworks!
-  pod 'Charts'
+  pod 'Charts', '~> 3.2.0'
 
   target 'WabbitTests' do
     inherit! :search_paths

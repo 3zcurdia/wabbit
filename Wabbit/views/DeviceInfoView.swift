@@ -98,13 +98,13 @@ class DeviceInfoView: UIView {
     private func loadInfo() {
         let foregroundColor = UIColor.black
         let deviseAttributes = [
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 26),
-            NSAttributedStringKey.foregroundColor: foregroundColor
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 26),
+            NSAttributedString.Key.foregroundColor: foregroundColor
         ]
         let modelName = devise.modelName
         let attributedText = NSMutableAttributedString(string: "\(modelName)", attributes: deviseAttributes)
         let systemAttributes = [
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16), NSAttributedStringKey.foregroundColor: foregroundColor
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16), NSAttributedString.Key.foregroundColor: foregroundColor
         ]
         attributedText.append(NSAttributedString(string: "\n\(devise.systemName) \(devise.systemVersion)\nSwift 4.0", attributes: systemAttributes))
         infoTextView.attributedText = attributedText
@@ -113,8 +113,8 @@ class DeviceInfoView: UIView {
     private func updateTime() {
         guard let time = elapsedTime else { return }
         let elapsedAttributes = [
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14),
-            NSAttributedStringKey.foregroundColor: UIColor.black
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14),
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         let attributedText = NSMutableAttributedString(string: "Elapsed time: \(time.rounded(toDigits: 5) ) [s]", attributes: elapsedAttributes)
         elapsedTimeTextView.attributedText = attributedText

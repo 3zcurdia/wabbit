@@ -47,6 +47,10 @@ class Crypto {
     }
 
     func base64(image: UIImage) -> String {
-        return UIImagePNGRepresentation(image)?.base64EncodedString(options: .lineLength64Characters) ?? ""
+        return base64(data: image.pngData())
+    }
+
+    func base64(data: Data?) -> String {
+        return data?.base64EncodedString(options: .lineLength64Characters) ?? ""
     }
 }

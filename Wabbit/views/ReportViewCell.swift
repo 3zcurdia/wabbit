@@ -89,13 +89,13 @@ class ReportViewCell: UICollectionViewCell {
         let elapsed = report.miliseconds()
         let ips = report.ips()
         let comparison = report.baselineComparison().rounded(toDigits: 2)
-        let elapsedAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+        let elapsedAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
         let attributedText = NSMutableAttributedString(string: "\t\(elapsed) [ms]", attributes: elapsedAttributes)
 
-        let ipsAttributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+        let ipsAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
         attributedText.append(NSAttributedString(string: "\n\t\(ips) [ips]", attributes: ipsAttributes))
 
-        let comparisonAttributs = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14, weight: .bold)]
+        let comparisonAttributs = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14, weight: .bold)]
         attributedText.append(NSAttributedString(string: "\n\t\(comparison)x", attributes: comparisonAttributs))
         return attributedText
     }
